@@ -1,5 +1,11 @@
+
+<?php
+
+  include_once __DIR__ . '\Model\ConnBD.php';
+
+?>
+
 <!DOCTYPE html>
-<html>
 
 <head>
   <!-- Basico -->
@@ -406,5 +412,7 @@
   <script src="js/custom.js"></script>
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+
 </body>
+
 </html>
