@@ -24,7 +24,7 @@ try{
   $bd = new PDO('oci:dbname='.$bd_settings, USER, PASS);
   $bd->setAttribute(PDO::ATTR_CASE, PDO::CASE_LOWER);
   $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  echo'CONEXION EXITOSA';
+  //echo'CONEXION EXITOSA';
   return $bd;
 
 } catch(Exception $e){

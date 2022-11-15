@@ -1,75 +1,27 @@
-
 <?php
 
   include_once __DIR__ . '\Model\ConnBD.php';
+  include_once __DIR__ . '\View\generales.php';
 
 ?>
 
 <!DOCTYPE html>
 
 <head>
-  <!-- Basico -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-  <!-- Titulo -->
-  <title>GUANAVET</title>
-  <!-- bootstrap -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <!-- CSS -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive -->
-  <link href="css/responsive.css" rel="stylesheet" />
-
+<?php
+  linksIndex();
+?>
 </head>
 
 <body>
   <div class="hero_area ">
     <div class="hero_bg_box">
-      <img src="images/back.png" alt="">
+      <img src="View/images/back.png" alt="">
     </div>
     <!-- header -->
-    <header class="header_section">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" href="index.html">
-            <span>
-              GUANAVET
-            </span>
-          </a>
-          <div class="" id="">
-            <div class="User_option">
-              <form class="form-inline my-2  mb-3 mb-lg-0">
-                <input type="search" placeholder="Search" />
-                <button class="btn   my-sm-0 nav_search-btn" type="submit"> <i class="fa fa-search" aria-hidden="true"></i> </button>
-              </form>
-            </div>
-
-            <div class="custom_menu-btn">
-              <button onclick="openNav()">
-                <span class="s-1"> </span>
-                <span class="s-2"> </span>
-                <span class="s-3"> </span>
-              </button>
-            </div>
-            <div id="myNav" class="overlay">
-              <div class="overlay-content">
-                <a href="index.html">Inicio</a>
-                <a href="about.html">Acerca de</a>
-                <a href="service.html">Servicios</a>
-                <a href="contact.html">Contacto</a>
-                <a href="cita.html">Citas</a>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
+    <?php
+    navegadorIndex();
+    ?>
     <!-- final header -->
     <!-- slider -->
     <section class="slider_section">
@@ -97,7 +49,7 @@
 
   <div class="main_content">
     <div class="main_content_bg">
-      <img src="images/content-bg.jpg" alt="">
+      <img src="View/images/content-bg.jpg" alt="">
     </div>
 
     <!-- service -->
@@ -110,7 +62,7 @@
           <div class="col-md-4">
             <div class="box ">
               <div class="img-box">
-                <img src="images/s1.png" alt="">
+                <img src="View/images/s1.png" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -127,7 +79,7 @@
           <div class="col-md-4">
             <div class="box ">
               <div class="img-box">
-                <img src="images/s2.png" alt="">
+                <img src="View/images/s2.png" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -144,7 +96,7 @@
           <div class="col-md-4">
             <div class="box ">
               <div class="img-box">
-                <img src="images/pethotel.png" alt="">
+                <img src="View/images/pethotel.png" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -159,7 +111,7 @@
           </div>
         </div>
         <div class="btn-box">
-          <a href="service.html">
+          <a href="View/service.html">
             Ver Más
           </a>
         </div>
@@ -189,7 +141,7 @@
                 GUANAVET 24/7 Hospitalización, Laboratorio clínico (Hematologia, Bioquímica Sanguínea) Rayos X, 
                 Ultrasonido, Cirugía (Ortopedia, Laparoscopia), Grooming y HOTEL para mascotas.   
               </p>
-              <a href="cita.html">
+              <a href="View/cita.html">
                 Obtener Cita
               </a>
             </div>
@@ -244,7 +196,7 @@
             <div class="item">
               <div class="box">
                 <div class="img-box">
-                  <img src="images/gato1.jpg" alt="">
+                  <img src="View/images/gato1.jpg" alt="">
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -263,7 +215,7 @@
             <div class="item">
               <div class="box">
                 <div class="img-box">
-                  <img src="images/perro1.jpg" alt="">
+                  <img src="View/images/perro1.jpg" alt="">
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -286,133 +238,18 @@
     </section>
     <!-- end client section -->
   </div>
-  <!-- info section -->
-  <br>
-  <section class="info_section layout_padding2">
-    <div class="info_container ">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-3 ">
-            <h6>
-              Acerca De
-            </h6>
-            <p>
-              GUANAVET 24/7 Hospitalización, Laboratorio clínico (Hematologia, Bioquímica Sanguínea) Rayos X, Ultrasonido, Cirugía 
-              (Ortopedia, Laparoscopia), Grooming y HOTEL para mascotas.         
-            </div>
-          <div class="col-md-6 col-lg-3 ">
-            <h6>
-              Paginas
-            </h6>
-            <div class="info_link-box">
-              <ul>
-                <li class="active">
-                  <a href="index.html">
-                    Inicio
-                  </a>
-                </li>
-                <li>
-                  <a href="about.html">
-                    Acerca de
-                  </a>
-                </li>
-                <li>
-                  <a href="service.html">
-                    Servicios
-                  </a>
-                </li>
-                <li>
-                  <a href="contact.html">
-                    Contacto
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 ">
-            <h6>
-              Direccion
-            </h6>
-            <div class="contact_items">
-              <a href="https://goo.gl/maps/HJnHJB3XEFMbq3pc9">
-                <div class="item ">
-                  <div class="img-box ">
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                  </div>
-                  <div class="detail-box">
-                    <p>
-                      Liberia, Guanacaste
-                    </p>
-                  </div>
-                </div>
-              </a>
-              <a href="">
-                <div class="item ">
-                  <div class="img-box ">
-                    <i class="fa fa-phone" aria-hidden="true"></i>
-                  </div>
-                  <div class="detail-box">
-                    <p>
-                      +506 2666 9444
-                    </p>
-                  </div>
-                </div>
-              </a>
-              <a href="mailto:guanavet@hotmail.com">
-                <div class="item ">
-                  <div class="img-box ">
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                  </div>
-                  <div class="detail-box">
-                    <p>
-                      guanavet@hotmail.com
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 ">
-            <div class="info_form ">
-              <h5>
-                Información
-              </h5>
-              <form action="#">
-                <input type="email" placeholder="Ingrese su email">
-                <a href="Login.html"class="btn btn-info">Ingresar</a>
-                
-              </form>
-              <div class="social_box">
-                <a href="https://www.facebook.com/guanavet/">
-                  <i class="fa fa-facebook" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.instagram.com/guanavet/">
-                  <i class="fa fa-instagram" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- end info section -->
-  <!-- footer section -->
-  <footer class="container-fluid footer_section ">
-    <p>
-      &copy; <span id="displayDate"></span> GUANAVET, Liberia, Guanacaste
-    </p>
-  </footer>
-  <!-- end  footer section -->
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.js"></script>
+  <!-- FOOTER -->
+  <?php
+  footerIndex();
+  ?>
   <!-- End Google Map -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
-  <script src="js/custom.js"></script>
+  <script src="View/js/custom.js"></script>
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
 
 </body>
 
 </html>
+
