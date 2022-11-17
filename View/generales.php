@@ -48,11 +48,13 @@ function navegadorIndex()
             </div>
             <div id="myNav" class="overlay">
               <div class="overlay-content">
-                <a href="../index.php">Inicio</a>
+                <a href="/../index.php">Inicio</a>
                 <a href="View/about.php">Acerca de</a>
                 <a href="View/service.php">Servicios</a>
                 <a href="View/contact.php">Contacto</a>
                 <a href="View/cita.php">Citas</a>
+                <a href="View/login.php">Iniciar Sesion</a>
+                <a href="View/auditoria.php">Auditoria</a>
               </div>
             </div>
           </div>
@@ -155,6 +157,7 @@ function footerIndex()
               </h5>
               <form action="#">
                 <input type="email" placeholder="Ingrese su email">
+                <br><br>
                 <a class="btn btn-outline-light">Ingresar</a>
                 
               </form>
@@ -338,6 +341,7 @@ function footerOtros()
               </h5>
               <form action="#">
                 <input type="email" placeholder="Ingrese su email">
+                <br><br>
                 <a class="btn btn-outline-light">Ingresar</a>
                 
               </form>

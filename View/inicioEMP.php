@@ -1,26 +1,24 @@
 <?php
-
-  include_once __DIR__ . '\Model\ConnBD.php';
-  include_once __DIR__ . '\View\generales.php';
-
+include_once __DIR__ . '\generales.php';
 ?>
 
 <!DOCTYPE html>
+<html>
 
 <head>
-<?php
-  linksIndex();
-?>
+  <?php
+  LinksOtros();
+  ?>
 </head>
 
 <body>
-  <div class="hero_area ">
+<div class="hero_area ">
     <div class="hero_bg_box">
-      <img src="View/images/back.png" alt="">
+      <img src="images/back.png" alt="">
     </div>
     <!-- header -->
     <?php
-    navegadorIndex();
+    navegadorOtros();
     ?>
     <!-- final header -->
     <!-- slider -->
@@ -49,7 +47,7 @@
 
   <div class="main_content">
     <div class="main_content_bg">
-      <img src="View/images/content-bg.jpg" alt="">
+      <img src="../View/images/content-bg.jpg" alt="">
     </div>
 
     <!-- service -->
@@ -62,7 +60,7 @@
           <div class="col-md-4">
             <div class="box ">
               <div class="img-box">
-                <img src="View/images/s1.png" alt="">
+                <img src="../View/images/s1.png" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -79,7 +77,7 @@
           <div class="col-md-4">
             <div class="box ">
               <div class="img-box">
-                <img src="View/images/s2.png" alt="">
+                <img src="../View/images/s2.png" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -96,7 +94,7 @@
           <div class="col-md-4">
             <div class="box ">
               <div class="img-box">
-                <img src="View/images/pethotel.png" alt="">
+                <img src="../View/images/pethotel.png" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -111,7 +109,7 @@
           </div>
         </div>
         <div class="btn-box">
-          <a href="View/service.php">
+          <a href="service.php">
             Ver Más
           </a>
         </div>
@@ -141,7 +139,7 @@
                 GUANAVET 24/7 Hospitalización, Laboratorio clínico (Hematologia, Bioquímica Sanguínea) Rayos X, 
                 Ultrasonido, Cirugía (Ortopedia, Laparoscopia), Grooming y HOTEL para mascotas.   
               </p>
-              <a href="View/Cita.php">
+              <a href="Cita.php">
                 Obtener Cita
               </a>
             </div>
@@ -167,12 +165,12 @@
               <p>
                 En GUANAVET contamos con excelentes profesionales para el cuidado adecuado de su mascota
               </p>
-              <a href="View/contact.php"> Contactarse </a>
+              <a href="contact.php"> Contactarse </a>
             </div>
           </div>
           <div class="col-md-6">
             <div class="img-box">
-              <img src="..\View\images\care.jpg" alt="" />
+              <img src="images/care.jpg" alt="" />
             </div>
           </div>
         </div>
@@ -181,73 +179,17 @@
 
     <!-- end care section -->
 
-    <!-- client section -->
-    <section class="client_section">
-      <div class="container">
-        <div class="heading_container">
-          <h2>
-            Clientes
-          </h2>
-        </div>
-        <div class="carousel-wrap ">
-          <div class="owl-carousel">
-            <div class="item">
-              <div class="box">
-                <div class="img-box">
-                  <img src="View/images/gato1.jpg" alt="">
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    David Hernandez <br>
-                    <span>
-                      Dueño
-                    </span>
-                  </h5>
-                  <i class="fa fa-quote-left" aria-hidden="true"></i>
-                  <p>
-                    Excelente servicio.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="box">
-                <div class="img-box">
-                  <img src="View/images/perro1.jpg" alt="">
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    Alison Brenes <br>
-                    <span>
-                      Dueño
-                    </span>
-                  </h5>
-                  <i class="fa fa-quote-left" aria-hidden="true"></i>
-                  
-                  <p>
-                    Muy profesionales
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- end client section -->
   </div>
   <!-- FOOTER -->
   <?php
-  footerIndex();
-  ?>
+    footerOtros();
+    ?>
   <!-- End Google Map -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
   <script src="View/js/custom.js"></script>
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
-
 </body>
 
 </html>
-
