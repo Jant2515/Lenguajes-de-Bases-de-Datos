@@ -27,6 +27,7 @@ include_once __DIR__ . '\generales.php';
     navegadorOtros();
     ?>
     <!-- end header section -->
+    <!-- end header section -->
     </div>
 
     <div class="main_content">
