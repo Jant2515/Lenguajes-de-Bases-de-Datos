@@ -1,7 +1,5 @@
 <?php
-
-include_once __DIR__ . '\generales.php';
-
+  include_once __DIR__ . '\generales.php';
 ?>
 
 <!DOCTYPE html>
@@ -24,14 +22,11 @@ include_once __DIR__ . '\generales.php';
     ?>
     <!-- end header section -->
   </div>
-
   <div class="main_content">
     <div class="main_content_bg">
       <img src="images/content-bg.jpg" alt="">
     </div>
-
     <!-- contact section -->
-
     <section class="contact_section layout_padding">
       <div class="container">
         <div class="heading_container">
@@ -73,17 +68,12 @@ include_once __DIR__ . '\generales.php';
         </div>
       </div>
     </section>
-
     <!-- end contact section -->
-
   </div>
-
   <!-- info section -->
   <?php
   footerOtros();
   ?>
-  
-
 </body>
 
 </html>
