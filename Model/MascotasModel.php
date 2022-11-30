@@ -6,8 +6,8 @@ function ListarCitas()
   $conex = new Conexion();
 
   $getConection = $conex->Conectar();
-  $sql = "select * from cita";
-  $stmt = $getConection->prepare($sql);
+
+  $stmt = $getConection->prepare("SELECT * FROM VISTA_CITAS");
   $stmt->execute();
 
   return $stmt;

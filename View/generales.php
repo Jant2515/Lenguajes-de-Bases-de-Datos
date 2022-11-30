@@ -341,6 +341,7 @@ function footerOtros()
                 <a class="btn btn-outline-light">Ingresar</a>
                 
               </form>
+              
               <div class="social_box">
                 <a href="https://www.facebook.com/guanavet/">
                   <i class="fa fa-facebook" aria-hidden="true"></i>
@@ -359,8 +360,8 @@ function footerOtros()
     <p>
       &copy; <span id="displayDate"></span> GUANAVET, Liberia, Guanacaste
     </p>
-  </footer>
+  </footer>'; /*
   <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.js"></script>';
+  <script src="js/bootstrap.js"></script>';*/
 }
 ?>
