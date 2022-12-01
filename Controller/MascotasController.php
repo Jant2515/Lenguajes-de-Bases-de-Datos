@@ -8,11 +8,12 @@ function Citalista()
   while($row = $stmt->fetch(PDO::FETCH_ASSOC))
   {
     echo '<tr>';
+    echo '<td>' . $row["idcita"] . '</td>';
     echo '<td>' . $row["servicio_cita"] . '</td>';
     echo '<td>' . $row["fecha_cita"] . '</td>';
     echo '<td>' . $row["hora_cita"] . '</td>';
     echo '<td>' . $row["telefono_cita"] . '</td>';
-    echo '<td>' . $row["nombre_mascota_cita"] . '</td>';
+    echo '<td>' . $row["nombre mascota"] . '</td>';
     echo '<td><a type="button" href="EditarCita.php" class="btn btn-outline-secondary">Editar</a>';
     echo '<td><a type="button" class="btn btn-outline-danger">Eliminar</a>';
     echo '</tr>';
@@ -63,36 +64,29 @@ function Mascotalista()
   while($row = $stmt->fetch(PDO::FETCH_ASSOC))
   {
     echo '<tr>';
-    echo '<td>' . $row["Nombre_masc"] . '</td>';
-    echo '<td>' . $row["Edad_masc"] . '</td>';
-    echo '<td>' . $row["Peso_masc"] . '</td>';
-    echo '<td>' . $row["talla_masc"] . '</td>';
-    echo '<td>' . $row["Genero_masc"] . '</td>';
-    echo '<td>' . $row["Esterelizado_masc"] . '</td>';
-    echo '<td>' . $row["Pedigree_masc"] . '</td>';
-    echo '<td>' . $row["Dueno_masc"] . '</td>';
-    echo '<td>' . $row["IdCliente"] . '</td>';
-    echo '<td>' . $row["raza_masc"] . '</td>';
+    echo '<td>' . $row["nombre_masc"] . '</td>';
+    echo '<td>' . $row["edad_masc"] . '</td>';
+    echo '<td>' . $row["genero_masc"] . '</td>';
+    echo '<td>' . $row["esterelizado_masc"] . '</td>';
+    echo '<td>' . $row["pedigree_masc"] . '</td>';
+    echo '<td>' . $row["dueno"] . '</td>';
     echo '<td><a type="button" href="EditarCita.php" class="btn btn-outline-secondary">Editar</a>';
     echo '<td><a type="button" class="btn btn-outline-danger">Eliminar</a>';
     echo '</tr>';
   }
 }
-function CLientelista()
+function Clientelista()
 {
   $stmt = ListarCliente();
   while($row = $stmt->fetch(PDO::FETCH_ASSOC))
   {
     echo '<tr>';
-    echo '<td>' . $row["Cedula"] . '</td>';
-    echo '<td>' . $row["NombreCliente"] . '</td>';
-    echo '<td>' . $row["ApellidoCliente"] . '</td>';
-    echo '<td>' . $row["TelefonoCliente"] . '</td>';
-    echo '<td>' . $row["EmailCliente"] . '</td>';
-    echo '<td>' . $row["IdProvincia"] . '</td>';
-    echo '<td>' . $row["IdCanton"] . '</td>';
-    echo '<td>' . $row["IdDistrito"] . '</td>';
-    echo '<td><a type="button" href="EditarCita.php" class="btn btn-outline-secondary">Editar</a>';
+    echo '<td>' . $row["cedula"] . '</td>';
+    echo '<td>' . $row["nombrecliente"] . '</td>';
+    echo '<td>' . $row["apellidocliente"] . '</td>';
+    echo '<td>' . $row["telefonocliente"] . '</td>';
+    echo '<td>' . $row["emailcliente"] . '</td>';
+    echo '<td><a type="button" href="EditarCliente.php" class="btn btn-outline-secondary">Editar</a>';
     echo '<td><a type="button" class="btn btn-outline-danger">Eliminar</a>';
     echo '</tr>';
   }
@@ -100,21 +94,18 @@ function CLientelista()
 
 function Empleadolista()
 {
-  $stmt = ListarCliente();
+  $stmt = ListarEmpleado();
   while($row = $stmt->fetch(PDO::FETCH_ASSOC))
   {
     echo '<tr>';
-    echo '<td>' . $row["CedulaEmp"] . '</td>';
-    echo '<td>' . $row["NombreEmp"] . '</td>';
-    echo '<td>' . $row["ApellidoEmp"] . '</td>';
-    echo '<td>' . $row["TelefonoEmp"] . '</td>';
-    echo '<td>' . $row["EmailEmp"] . '</td>';
-    echo '<td>' . $row["PuestoEmp"] . '</td>';
-    echo '<td>' . $row["SalarioEmp"] . '</td>';
-    echo '<td>' . $row["IdProvincia"] . '</td>';
-    echo '<td>' . $row["IdCanton"] . '</td>';
-    echo '<td>' . $row["IdDistrito"] . '</td>';
-    echo '<td><a type="button" href="EditarCita.php" class="btn btn-outline-secondary">Editar</a>';
+    echo '<td>' . $row["cedulaemp"] . '</td>';
+    echo '<td>' . $row["nombreemp"] . '</td>';
+    echo '<td>' . $row["apellidoemp"] . '</td>';
+    echo '<td>' . $row["telefonoemp"] . '</td>';
+    echo '<td>' . $row["emailemp"] . '</td>';
+    echo '<td>' . $row["puestoemp"] . '</td>';
+    echo '<td>' . $row["salarioemp"] . '</td>';
+    echo '<td><a type="button" href="EditarEmpleado.php" class="btn btn-outline-secondary">Editar</a>';
     echo '<td><a type="button" class="btn btn-outline-danger">Eliminar</a>';
     echo '</tr>';
   }

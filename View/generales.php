@@ -52,7 +52,7 @@ function navegadorIndex()
                 <a href="View/about.php">Acerca de</a>
                 <a href="View/service.php">Servicios</a>
                 <a href="View/contact.php">Contacto</a>
-                <a href="View/cita.php">Citas</a>
+                <a href="View/Servicios.php">Citas</a>
                 <a href="View/login.php">Iniciar Sesion</a>
                 <a href="View/auditoria.php">Auditoria</a>
               </div>

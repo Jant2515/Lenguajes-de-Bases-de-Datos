@@ -54,9 +54,6 @@ include_once __DIR__ . '\generales.php';
                                     <th>Email</th>
                                     <th>Puesto</th>
                                     <th>Salario</th>
-                                    <th>Idprovincia</th>
-                                    <th>IdCanton</th>
-                                    <th>IdDistrito</th>
                                 </tr>
                             </thead>
                             <tbody>

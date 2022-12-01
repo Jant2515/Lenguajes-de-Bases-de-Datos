@@ -52,14 +52,11 @@ include_once __DIR__ . '\generales.php';
                                     <th>Apellido</th>
                                     <th>Telefono</th>
                                     <th>Email</th>
-                                    <th>IdProvincia</th>
-                                    <th>IdCanton</th>
-                                    <th>IdDistrito</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                Citalista();
+                                Clientelista();
                             ?>
                             </tbody>
                         </table>

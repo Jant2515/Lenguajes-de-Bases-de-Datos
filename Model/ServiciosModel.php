@@ -7,7 +7,7 @@ function ListarServicios()
 
   $getConection = $conex->Conectar();
 
-  $stmt = $getConection->prepare("SELECT * FROM VISTA_SERV");
+  $stmt = $getConection->prepare("SELECT * FROM VISTA_SERVICIOS");
   $stmt->execute();
 
   return $stmt;

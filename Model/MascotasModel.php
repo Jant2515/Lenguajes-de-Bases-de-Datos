@@ -60,7 +60,7 @@ function ListarMascota()
 
   $getConection = $conex->Conectar();
 
-  $stmt = $getConection->prepare("SELECT *FROM MASCOTASyDUEÑOS");
+  $stmt = $getConection->prepare("SELECT *FROM MASCOTASyDUENOS");
   $stmt->execute();
 
   return $stmt;
@@ -73,7 +73,7 @@ function ListarCliente()
 
   $getConection = $conex->Conectar();
 
-  $stmt = $getConection->prepare("SELECT *FROM CLIENTES");
+  $stmt = $getConection->prepare("SELECT *FROM VISTA_CLIENTE");
   $stmt->execute();
 
   return $stmt;

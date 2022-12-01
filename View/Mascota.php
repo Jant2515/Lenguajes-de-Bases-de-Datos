@@ -49,8 +49,6 @@ include_once __DIR__ . '\generales.php';
                                 <tr>
                                     <th>Nombre Mascota</th>
                                     <th>Edad</th>
-                                    <th>Peso</th>
-                                    <th>Talla</th>
                                     <th>Genero</th>
                                     <th>Esterilizado</th>
                                     <th>Pedigree</th>
