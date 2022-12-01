@@ -43,37 +43,56 @@ include_once __DIR__ . '\..\Controller\MascotasController.php';
                                     <div class="mb-md-5 mt-md-4 pb-5">
 
                                         <h2 class="fw-bold mb-2 text-uppercase">
-                                            <h2 class="fw-bold mb-2 text-uppercase">Editar de Cita</h2>
+                                            <h2 class="fw-bold mb-2 text-uppercase">Editar Cliente</h2>
                                         </h2>
                                         <p class="text-black-50 mb-5">Edite los datos necesarios</p>
 
                                         <div class="form-outline form-white  mb-4">
-                                            <label for="inputEmail4" class="form-label">Servicio</label>
-                                            <input type="text" class="form-control" id="serviciocita" name="serviciocita">
+                                            <label for="inputPassword4" class="form-label">Cedula</label>
+                                            <input type="text" class="form-control" id="cedula_cli"
+                                                name="cedula_cli">
+                                        </div>
+
+                                        <div class="form-outline form-white  mb-4">
+                                            <label for="inputEmail4" class="form-label">Nombre</label>
+                                            <input type="text" class="form-control" id="nombre_cli" name="nombre_cli">
                                         </div>
                                         <div class="form-outline form-white  mb-4">
-                                            <label for="inputPassword4" class="form-label">Fecha</label>
-                                            <input type="text" class="form-control" id="fechacita"
-                                                name="fechacita">
-                                        </div>
-                                        <div class="form-outline form-white  mb-4">
-                                            <label for="inputEmail4" class="form-label">Hora</label>
-                                            <input type="text" class="form-control" id="horacita" name="horacita">
+                                            <label for="inputPassword4" class="form-label">Apellido</label>
+                                            <input type="text" class="form-control" id="apellido_cli"
+                                                name="apellido_cli">
                                         </div>
                                         <div class="form-outline form-white  mb-4">
                                             <label for="inputPassword4" class="form-label">Telefono</label>
-                                            <input type="text" class="form-control" id="telcita" name="telcita">
+                                            <input type="text" class="form-control" id="telefono_cli"
+                                                name="telefono_cli">
                                         </div>
                                         <div class="form-outline form-white  mb-4">
-                                            <label for="inputPassword4" class="form-label">Nombre de la Mascota</label>
-                                            <input type="text" class="form-control" id="mascotacita"
-                                                name="mascotacita">
+                                            <label for="inputPassword4" class="form-label">Email</label>
+                                            <input type="text" class="form-control" id="mail_cli"
+                                                name="mail_Cli">
                                         </div>
 
+                                        <div class="form-outline form-white  mb-4">
+                                            <label for="inputPassword4" class="form-label">Idprovincia</label>
+                                            <input type="text" class="form-control" id="id_provicinca"
+                                                name="id_provicinca">
+                                        </div>
 
+                                        <div class="form-outline form-white  mb-4">
+                                            <label for="inputPassword4" class="form-label">Idcanton</label>
+                                            <input type="text" class="form-control" id="id_cant"
+                                                name="id_cant">
+                                        </div>
+
+                                        <div class="form-outline form-white  mb-4">
+                                            <label for="inputPassword4" class="form-label">IdDistrito</label>
+                                            <input type="text" class="form-control" id="id_dist"
+                                                name="id_dist">
+                                        </div>
 
                                         <button type="submit" class="btn btn-outline-info btn-lg px-5"
-                                        name="btnConfirmar">Confirmar</button>
+                                            name="btnConfirmar">Confirmar</button>
 
                                     </div>
                                 </form>
