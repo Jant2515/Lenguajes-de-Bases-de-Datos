@@ -18,6 +18,32 @@ function Citalista()
     echo '</tr>';
   }
 }
+
+if(isset($_POST["agregarCita"]))
+{
+  $ServicioCita = $_POST["serviciocita"];
+  $FechaCita= $_POST["fechacita"];
+  $HoraCita = $_POST["horacita"];
+  $TelCita = $_POST["telcita"];
+  $MascotaCita = $_POST["mascotacita"];
+
+  AgregarCitasModel($ServicioCita, $FechaCita, $HoraCita, $TelCita, $MascotaCita);
+  header("Location: Cita.php");
+}
+
+if(isset($_POST["editarCita"]))
+{
+    $IDCita = $_POST["idCita"];
+    $ServicioCita = $_POST["serviciocita"];
+    $FechaCita= $_POST["fechacita"];
+    $HoraCita = $_POST["horacita"];
+    $TelCita = $_POST["telcita"];
+    $MascotaCita = $_POST["mascotacita"];
+
+    EditarCitasModel($IDCita, $ServicioCita, $FechaCita, $HoraCita, $TelCita, $MascotaCita);
+    header("Location: Cita.php");
+}
+
 //FALTA ENVIAR PARAMETROS BIEN Y CONFIGURAR BIEN 
 /*if(isset($_POST["btnbtnConfirmar"]))
 {

@@ -46,34 +46,36 @@ include_once __DIR__ . '\..\Controller\MascotasController.php';
                                             <h2 class="fw-bold mb-2 text-uppercase">Editar de Cita</h2>
                                         </h2>
                                         <p class="text-black-50 mb-5">Edite los datos necesarios</p>
+                                        <input type="hidden" value="<?php echo $datos["IDCITA"] ?>" id="idCita" name="idCita">
 
                                         <div class="form-outline form-white  mb-4">
                                             <label for="inputEmail4" class="form-label">Servicio</label>
-                                            <input type="text" class="form-control" id="serviciocita" name="serviciocita">
+                                            <input type="text" class="form-control" id="serviciocita" name="serviciocita" 
+                                            value="<?php echo $datos["SERVICIO_CITA"] ?>">
                                         </div>
                                         <div class="form-outline form-white  mb-4">
                                             <label for="inputPassword4" class="form-label">Fecha</label>
-                                            <input type="text" class="form-control" id="fechacita"
-                                                name="fechacita">
+                                            <input type="date" class="form-control" id="fechacita" name="fechacita"
+                                            value="<?php echo $datos["FECHA_CITA"] ?>">
                                         </div>
                                         <div class="form-outline form-white  mb-4">
                                             <label for="inputEmail4" class="form-label">Hora</label>
-                                            <input type="text" class="form-control" id="horacita" name="horacita">
+                                            <input type="time" class="form-control" id="horacita" name="horacita"
+                                            value="<?php echo $datos["HORA_CITA"] ?>">
                                         </div>
                                         <div class="form-outline form-white  mb-4">
                                             <label for="inputPassword4" class="form-label">Telefono</label>
-                                            <input type="text" class="form-control" id="telcita" name="telcita">
+                                            <input type="text" class="form-control" id="telcita" name="telcita"
+                                            value="<?php echo $datos["TELEFONO_CITA"] ?>">
                                         </div>
                                         <div class="form-outline form-white  mb-4">
                                             <label for="inputPassword4" class="form-label">Nombre de la Mascota</label>
-                                            <input type="text" class="form-control" id="mascotacita"
-                                                name="mascotacita">
+                                            <input type="text" class="form-control" id="mascotacita" name="mascotacita"
+                                            value="<?php echo $datos["NOMBRE_MASCOTA_CITA"] ?>">
                                         </div>
 
-
-
                                         <button type="submit" class="btn btn-outline-info btn-lg px-5"
-                                        name="btnConfirmar">Confirmar</button>
+                                            name="editarCita">Editar</button>
 
                                     </div>
                                 </form>

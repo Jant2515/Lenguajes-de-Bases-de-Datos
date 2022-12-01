@@ -12,6 +12,33 @@ function ListarCitas()
 
   return $stmt;
 }
+//REVISAR ESTOS PROCEDIMIENTOS 
+function AgregarCitasModel($ServicioCita, $FechaCita, $HoraCita, $TelCita, $MascotaCita)
+{
+    require_once('ConnBD.php');
+    $conex = new Conexion();
+
+    $getConection = $conex->Conectar();
+
+    $stmt = $getConection->prepare("EXECUDE INSERTAR_CITA('$ServicioCita', '$FechaCita', '$HoraCita', '$TelCita', '$MascotaCita')");
+    $stmt->execute();
+
+    return $stmt;
+}
+
+function EditarCitasModel($IDCita, $ServicioCita, $FechaCita, $HoraCita, $TelCita, $MascotaCita)
+{
+    require_once('ConnBD.php');
+    $conex = new Conexion();
+
+    $getConection = $conex->Conectar();
+
+    $stmt = $getConection->prepare("EXECUDE EDITAR_CITA('$IDCita', '$ServicioCita', '$FechaCita', '$HoraCita', '$TelCita', '$MascotaCita')");
+    $stmt->execute();
+
+    return $stmt;
+}
+
 //FALATA ENVIAR PARAMETROS BIEN 
 /*function ActualizarCitasModel($Nombre,$Contrasenna,$Correo,$TipoUsuario,$Id)
 {

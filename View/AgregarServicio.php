@@ -43,37 +43,24 @@ include_once __DIR__ . '\..\Controller\MascotasController.php';
                                     <div class="mb-md-5 mt-md-4 pb-5">
 
                                         <h2 class="fw-bold mb-2 text-uppercase">
-                                            <h2 class="fw-bold mb-2 text-uppercase">Agenda de Citas</h2>
+                                            <h2 class="fw-bold mb-2 text-uppercase">Agregar Servicio</h2>
                                         </h2>
                                         <p class="text-black-50 mb-5">Ingrese los datos necesarios</p>
 
                                         <div class="form-outline form-white  mb-4">
-                                            <label for="inputEmail4" class="form-label">Servicio</label>
-                                            <input type="text" class="form-control" id="serviciocita" name="serviciocita">
+                                            <label for="inputEmail4" class="form-label">Nombre del Servicio</label>
+                                            <input type="text" class="form-control" id="nombreServicio" name="nombreServicio">
                                         </div>
                                         <div class="form-outline form-white  mb-4">
-                                            <label for="inputPassword4" class="form-label">Fecha</label>
-                                            <input type="text" class="form-control" id="fechacita"
-                                                name="fechacita">
+                                            <label for="inputPassword4" class="form-label">Descripcion</label>
+                                            <input type="text" class="form-control" id="DescripcionServicio" name="DescripcionServicio">
                                         </div>
                                         <div class="form-outline form-white  mb-4">
-                                            <label for="inputEmail4" class="form-label">Hora</label>
-                                            <input type="text" class="form-control" id="horacita" name="horacita">
-                                        </div>
-                                        <div class="form-outline form-white  mb-4">
-                                            <label for="inputPassword4" class="form-label">Telefono</label>
-                                            <input type="text" class="form-control" id="telcita" name="telcita">
-                                        </div>
-                                        <div class="form-outline form-white  mb-4">
-                                            <label for="inputPassword4" class="form-label">Nombre de la Mascota</label>
-                                            <input type="text" class="form-control" id="mascotacita"
-                                                name="mascotacita">
-                                        </div>
-
-
-
+                                            <label for="inputEmail4" class="form-label">Precio</label>
+                                            <input type="number" min = "1" class="form-control" id="PrecioServicio" name="PrecioServicio">
+                                        </div></br></br>
                                         <button type="submit" class="btn btn-outline-info btn-lg px-5"
-                                            name="agregarCita">Agregar</button>
+                                            name="agregarServicio">Agregar</button>
 
                                     </div>
                                 </form>
@@ -83,7 +70,7 @@ include_once __DIR__ . '\..\Controller\MascotasController.php';
                 </div>
             </div>
         </section>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br>
         <?php
     footerOtros();
     ?>
