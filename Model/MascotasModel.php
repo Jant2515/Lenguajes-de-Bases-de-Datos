@@ -19,11 +19,15 @@ function AgregarCitasModel($ServicioCita, $FechaCita, $HoraCita, $TelCita, $Masc
     $conex = new Conexion();
 
     $getConection = $conex->Conectar();
+    $sentencia = $getConection->prepare("BEGIN CrearCita(:vservicio ,:vfecha, :vhora, :vtelefono, :vnombre); END;");
+    $sentencia->bindParam(':vservicio',$ServicioCita);
+    $sentencia->bindParam(':vfecha',$FechaCita);
+    $sentencia->bindParam(':vhora',$HoraCita);
+    $sentencia->bindParam(':vtelefono',$TelCita);
+    $sentencia->bindParam(':vnombre',$MascotaCita);
+    $sentencia->execute();
 
-    $stmt = $getConection->prepare("EXECUDE INSERTAR_CITA('$ServicioCita', '$FechaCita', '$HoraCita', '$TelCita', '$MascotaCita')");
-    $stmt->execute();
-
-    return $stmt;
+    return $sentencia;
 }
 
 function EditarCitasModel($IDCita, $ServicioCita, $FechaCita, $HoraCita, $TelCita, $MascotaCita)
