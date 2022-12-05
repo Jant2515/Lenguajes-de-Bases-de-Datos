@@ -1,4 +1,3 @@
-
 <?php
 
 function linksIndex()
@@ -52,9 +51,10 @@ function navegadorIndex()
                 <a href="View/about.php">Acerca de</a>
                 <a href="View/service.php">Servicios</a>
                 <a href="View/contact.php">Contacto</a>
-                <a href="View/Cita.php">Citas</a>
-                <a href="View/login.php">Iniciar Sesion</a>
+                <a href="View/MostrarTablas.php">Tablas</a>
                 <a href="View/auditoria.php">Auditoria</a>
+                <a href="View/login.php">Iniciar Sesion</a>
+                
               </div>
             </div>
           </div>
@@ -239,7 +239,8 @@ function navegadorOtros()
               <a href="about.php">Acerca de</a>
               <a href="service.php">Servicios</a>
               <a href="contact.php">Contacto</a>
-              <a href="cita.php">Citas</a>
+              <a href="MostrarTablas.php">Tablas</a>
+              <a href="auditoria.php">Auditoria</a>
             </div>
           </div>
         </div>
