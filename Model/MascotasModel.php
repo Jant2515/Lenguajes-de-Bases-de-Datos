@@ -70,6 +70,27 @@ function ListarMascota()
   return $stmt;
 }
 
+function AgregarMascotaModel($NomMas, $RazaMas, $EdadMas, $PesoMas, $TallaMas, $GeneroMas, $EsterilizadoMas, $PedigreeMas, $IdCliente)
+{
+    require_once('ConnBD.php');
+    $conex = new Conexion();
+
+    $getConection = $conex->Conectar();
+    $sentencia = $getConection->prepare("BEGIN INSERTAR_MASCOTA(:VNOMBRE_MASC, :VRAZA_MASC, :VEDAD_MASC, :VPESO_MASC, :VTALLA_MASC, :VGENERO_MASC, :VESTERELIZADO_MASC, :VPEDIGREE_MASC, :VIDCLIENTE); END;");
+    $sentencia->bindParam(':VNOMBRE_MASC',$NomMas);
+    $sentencia->bindParam(':VRAZA_MASC',$RazaMas);
+    $sentencia->bindParam(':VEDAD_MASC',$EdadMas);
+    $sentencia->bindParam(':VPESO_MASC',$PesoMas);
+    $sentencia->bindParam(':VTALLA_MASC',$TallaMas);
+    $sentencia->bindParam(':VGENERO_MASC',$GeneroMas);
+    $sentencia->bindParam(':VESTERELIZADO_MASC',$EsterilizadoMas);
+    $sentencia->bindParam(':VPEDIGREE_MASC',$PedigreeMas);
+    $sentencia->bindParam(':VIDCLIENTE',$IdCliente);
+    $sentencia->execute();
+
+    return $sentencia;
+}
+
 function ListarCliente()
 {
   require_once('ConnBD.php');
@@ -83,6 +104,26 @@ function ListarCliente()
   return $stmt;
 }
 
+function AgregarClienteModel($NombreCli, $ApellidoCli, $TelefonoCli, $EmailCli, $CedulaCli, $ProvinciaCli, $CantonCli, $DistritoCli)
+{
+    require_once('ConnBD.php');
+    $conex = new Conexion();
+
+    $getConection = $conex->Conectar();
+    $sentencia = $getConection->prepare("BEGIN INSERTAR_CLIENTE(:VNOMBRECLIENTE, :VAPELLIDOCLIENTE, :VTELEFONOCLIENTE, :VEMAILCLIENTE, :VCEDULA, :VIDPROVINCIA, :VIDCANTON, :VIDDISTRITO); END;");
+    $sentencia->bindParam(':VNOMBRECLIENTE',$NombreCli);
+    $sentencia->bindParam(':VAPELLIDOCLIENTE',$ApellidoCli);
+    $sentencia->bindParam(':VTELEFONOCLIENTE',$TelefonoCli);
+    $sentencia->bindParam(':VEMAILCLIENTE',$EmailCli);
+    $sentencia->bindParam(':VCEDULA',$CedulaCli);
+    $sentencia->bindParam(':VIDPROVINCIA',$ProvinciaCli);
+    $sentencia->bindParam(':VIDCANTON',$CantonCli);
+    $sentencia->bindParam(':VIDDISTRITO',$DistritoCli);
+    $sentencia->execute();
+
+    return $sentencia;
+}
+
 function ListarEmpleado()
 {
   require_once('ConnBD.php');
@@ -94,6 +135,25 @@ function ListarEmpleado()
   $stmt->execute();
 
   return $stmt;
+}
+
+function AgregarEmpleadoModel($NombreEmp, $ApellidoEmp, $TelefonoEmp, $CedulaEmp, $EmailEmp, $PuestoEmp, $SalarioEmp)
+{
+    require_once('ConnBD.php');
+    $conex = new Conexion();
+
+    $getConection = $conex->Conectar();
+    $sentencia = $getConection->prepare("BEGIN INSERTAREMPLEADO(:VNOMBREEMP, :VAPELLIDOEMP, :VTELEFONOEMP, :VCEDULAEMP, :VEMAILEMP, :VPUESTOEMP, :VSALARIOEMP); END;");
+    $sentencia->bindParam(':VNOMBREEMP',$NombreEmp);
+    $sentencia->bindParam(':VAPELLIDOEMP',$ApellidoEmp);
+    $sentencia->bindParam(':VTELEFONOEMP',$TelefonoEmp);
+    $sentencia->bindParam(':VCEDULAEMP',$CedulaEmp);
+    $sentencia->bindParam(':VEMAILEMP',$EmailEmp);
+    $sentencia->bindParam(':VPUESTOEMP',$PuestoEmp);
+    $sentencia->bindParam(':VSALARIOEMP',$SalarioEmp);
+    $sentencia->execute();
+
+    return $sentencia;
 }
 
 ?>

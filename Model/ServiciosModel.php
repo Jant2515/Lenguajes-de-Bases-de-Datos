@@ -19,11 +19,13 @@ function AgregarServiciosModel($NombreServicio, $DescipcionServicio, $PrecioServ
     $conex = new Conexion();
 
     $getConection = $conex->Conectar();
+    $sentencia = $getConection->prepare("BEGIN CrearCita(:VNOMSERVICIO ,:VDESCRIPCION, :VPRECIO); END;");
+    $sentencia->bindParam(':VNOMSERVICIO',$NombreServicio);
+    $sentencia->bindParam(':VDESCRIPCION',$DescipcionServicio);
+    $sentencia->bindParam(':VPRECIO',$PrecioServicio);
+    $sentencia->execute();
 
-    $stmt = $getConection->prepare("EXECUDE INSERTAR_SERVICIOS('$NombreServicio', '$DescipcionServicio', '$PrecioServicio')");
-    $stmt->execute();
-
-    return $stmt;
+    return $sentencia;
 
 }
 
