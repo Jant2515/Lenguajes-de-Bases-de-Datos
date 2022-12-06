@@ -71,10 +71,16 @@ include_once __DIR__ . '\generales.php';
     </div>
     <div class="d-grid gap-2 col-6 mx-auto">
     <a class="btn btn-outline-info" href="AgregarCita.php" type="button">Agendar una Cita</a>
-
+    </div>
+    <br>
     <?php
     footerOtros();
     ?>
+    <!-- End Google Map -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <script src="js/custom.js"></script>
+  <!-- Google Map -->
 </body>
 
 </html>

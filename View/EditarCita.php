@@ -3,34 +3,14 @@ include_once __DIR__ . '/generales.php';
 include_once __DIR__ . '\..\Controller\MascotasController.php';
 ?>
 
-<?php
-include_once __DIR__ . '/../Model/ConnBD.php';
-$conex = new Conexion();
-  $getConection = $conex->Conectar();
-  $Codigo=$_GET['q'];
-$sql= "SELECT*FROM Cita WHERE idcita = $Codigo";
-$stmt1 = $getConection->prepare($sql); 
-$stmt1->execute();
-
-
-while($row = $stmt1->fetch(PDO::FETCH_ASSOC)){
-  $Codigo = $row["idCita"];
-  $ServicioCita = $row["serviciocita"];
-  $FechaCita= $row["fechacita"];
-  $HoraCita = $row["horacita"];
-  $TelCita = $row["telcita"];
-  $MascotaCita = $row["mascotacita"];
-  }
-   ?>
-
 <!DOCTYPE html>
 
 <head>
     <?php
     LinksOtros();
-    //$Codigo= Consultaridcitas ($_GET['id']);
     ?>
 </head>
+
 
 <body class="sub_page">
 
@@ -109,6 +89,11 @@ while($row = $stmt1->fetch(PDO::FETCH_ASSOC)){
         <?php
     footerOtros();
     ?>
+        <!-- End Google Map -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+        </script>
+        <script src="js/custom.js"></script>
+        <!-- Google Map -->
 </body>
 
 </html>

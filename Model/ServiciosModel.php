@@ -39,25 +39,4 @@ function EditarServiciosModel($IDServicio, $NombreServicio, $DescipcionServicio,
 
     return $stmt;
 }
-
-function ConsultaridEmpleadosModel($idempleado)
-{
-  $conex = new Conexion();
-  $getConection = $conex->Conectar();
-  $sentencia = $getConection->prepare("SELECT *FROM empleados WHERE idempleado = pidempleado=''; END;");
-  $sentencia->execute();
-  return $sentencia;
-
-}
-
-
-function EliminarCita()
-{
-  $conex = new Conexion();
-  $getConection = $conex->Conectar();
-  $id1=$_GET['id'];
-  $sql="Delete from cita where id = '$id1'";
-  $stmt1 = $getConection->prepare($sql); 
-  $stmt1->execute();
-}
 ?>
