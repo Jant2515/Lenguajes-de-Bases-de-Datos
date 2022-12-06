@@ -69,7 +69,7 @@ include_once __DIR__ . '\generales.php';
         </div>
     </div>
     <div class="d-grid gap-2 col-6 mx-auto">
-    <a class="btn btn-outline-info" href="AgregarCita.php" type="button">Agendar una Cita</a>
+    <a class="btn btn-outline-info" href="AgregarMascota.php" type="button">Agregar una Mascota</a>
     </div>
     <br>
     <?php

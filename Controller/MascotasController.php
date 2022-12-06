@@ -75,6 +75,23 @@ function Mascotalista()
     echo '</tr>';
   }
 }
+
+if(isset($_POST["agregarMascota"]))
+{
+  $NomMas = $_POST["nombre_masc"];
+  $RazaMas = $_POST["raza"];
+  $EdadMas = $_POST["edad"];
+  $PesoMas = $_POST["peso"];
+  $TallaMas = $_POST["talla"];
+  $GeneroMas = $_POST["genero"];
+  $EsterilizadoMas = $_POST["esterelizacion"];
+  $PedigreeMas = $_POST["pedigree"];
+  $IdCliente = $_POST["idclient"];
+
+  AgregarMascotaModel($NomMas, $RazaMas, $EdadMas, $PesoMas, $TallaMas, $GeneroMas, $EsterilizadoMas, $PedigreeMas, $IdCliente);
+  header("Location: Mascota.php");
+}
+
 function Clientelista()
 {
   $stmt = ListarCliente();
@@ -90,6 +107,21 @@ function Clientelista()
     echo '<td><a type="button" class="btn btn-outline-danger">Eliminar</a>';
     echo '</tr>';
   }
+}
+
+if(isset($_POST["agregarCliente"]))
+{
+  $CedulaCli = $_POST["cedula_cli"];
+  $NombreCli = $_POST["nombre_cli"];
+  $ApellidoCli = $_POST["apellido_cli"];
+  $TelefonoCli = $_POST["telefono_cli"];
+  $EmailCli = $_POST["mail_cli"];
+  $ProvinciaCli = $_POST["id_provincia"];
+  $CantonCli = $_POST["id_cant"];
+  $DistritoCli = $_POST["salario_emp"];
+
+  AgregarClienteModel($NombreCli, $ApellidoCli, $TelefonoCli, $EmailCli, $CedulaCli, $ProvinciaCli, $CantonCli, $DistritoCli);
+  header("Location: Cliente.php");
 }
 
 function Empleadolista()
@@ -109,6 +141,20 @@ function Empleadolista()
     echo '<td><a type="button" class="btn btn-outline-danger">Eliminar</a>';
     echo '</tr>';
   }
+}
+
+if(isset($_POST["agregarEmp"]))
+{
+  $CedulaEmp = $_POST["cedula_emp"];
+  $NombreEmp= $_POST["nombre_emp"];
+  $ApellidoEmp = $_POST["apellido_emp"];
+  $TelefonoEmp = $_POST["telefono_emp"];
+  $EmailEmp = $_POST["mail_emp"];
+  $PuestoEmp = $_POST["puesto_emp"];
+  $SalarioEmp = $_POST["salario_emp"];
+
+  AgregarEmpleadoModel($NombreEmp, $ApellidoEmp, $TelefonoEmp, $CedulaEmp, $EmailEmp, $PuestoEmp, $SalarioEmp);
+  header("Location: Empleado.php");
 }
 
 ?>
