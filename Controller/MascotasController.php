@@ -157,4 +157,29 @@ if(isset($_POST["agregarEmp"]))
   header("Location: Empleado.php");
 }
 
+
+  if(isset($_POST["agregarServicio"]))
+{
+    $NombreServicio = $_POST["nombreServicio"];
+    $DescipcionServicio= $_POST["DescripcionServicio"];
+    $PrecioServicio = $_POST["PrecioServicio"];
+
+    AgregarServiciosModel($NombreServicio, $DescipcionServicio, $PrecioServicio);
+    header("Location: Servicios.php");
+}
+
+
+if(isset($_POST["Editarcita"]))
+{
+ $idcita =$_POST["idCita"];
+ $servicio_cita =$_POST["serviciocita"];
+ $fecha_cita =$_POST["fechacita"];
+ $hora_cita =$_POST["horacita"];
+ $telefono_cita =$_POST["telcita"];
+ $nombre_mascota_cita =$_POST["mascotacita"];
+
+ EditaridCitas($idcita, $servicio_cita, $fecha_cita, $hora_cita, $telefono_cita, $nombre_mascota_cita);
+  header("Location: Cita.php");
+}
+
 ?>
