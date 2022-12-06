@@ -70,7 +70,7 @@ include_once __DIR__ . '\generales.php';
     <div class="d-grid gap-2 col-6 mx-auto">
     <a class="btn btn-outline-info" href="AgregarCita.php" type="button">Agendar una Cita</a>
     </div>
-    <br>
+    <br><br><br><br><br><br>
     <?php
     footerOtros();
     ?>
