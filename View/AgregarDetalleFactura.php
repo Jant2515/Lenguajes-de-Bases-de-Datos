@@ -41,12 +41,12 @@ include_once __DIR__ . '\..\Controller\MascotasController.php';
 
                     <div class="col-md-3 margin-bottom-15">
                         <label class="control-label">Veterinaria</label>
-                        <input value="Guanavet" type="text" class="form-control" id="txtVeterinaria" name="txtVeterinaria" autocomplete="off" required disabled>
+                        <input value="Guanavet" type="text" class="form-control" id="txtVeterinaria" name="txtVeterinaria" autocomplete="off" required readonly>
                     </div>
 
                     <div class="col-md-4 margin-bottom-15">
                     <label class="control-label">Telefono</label>
-                        <input value="26669444" type="text" class="form-control" id="txtTelefono" name="txtTelefono" autocomplete="off" required disabled>
+                        <input value="26669444" type="text" class="form-control" id="txtTelefono" name="txtTelefono" autocomplete="off" required readonly>
                     </div>
 
                     <div class="col-md-3 margin-bottom-15">
@@ -132,7 +132,7 @@ include_once __DIR__ . '\..\Controller\MascotasController.php';
                 </div>
             </div>
         </form>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br>
         <?php
         footerOtros();
         ?>

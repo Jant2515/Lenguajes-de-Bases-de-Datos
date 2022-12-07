@@ -132,7 +132,7 @@ include_once __DIR__ . '\..\Controller\MascotasController.php';
                 </div>
             </div>
         </form>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br>
         <?php
         footerOtros();
         ?>

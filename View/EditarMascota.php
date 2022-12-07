@@ -119,7 +119,7 @@ include_once __DIR__ . '\..\Controller\MascotasController.php';
                 </div>
             </div>
         </section>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br>
         <?php
     footerOtros();
     ?>

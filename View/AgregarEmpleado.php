@@ -85,7 +85,6 @@ include_once __DIR__ . '\..\Controller\MascotasController.php';
 
                                         <button type="submit" class="btn btn-outline-info btn-lg px-5"
                                             name="agregarEmp">Confirmar</button>
-
                                     </div>
                                 </form>
                             </div>
@@ -94,18 +93,6 @@ include_once __DIR__ . '\..\Controller\MascotasController.php';
                 </div>
             </div>
         </section>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <br>
         <?php
     footerOtros();
