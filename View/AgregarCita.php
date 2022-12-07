@@ -1,6 +1,6 @@
 <?php
 include_once __DIR__ . '/generales.php';
-include_once __DIR__ . '\..\Controller\MascotasController.php';
+include_once __DIR__ . '\..\Controller\CitasController.php';
 ?>
 
 <!DOCTYPE html>
