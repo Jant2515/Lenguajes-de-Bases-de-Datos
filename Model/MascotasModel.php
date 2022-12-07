@@ -44,20 +44,6 @@ function EditarCitasModel($IDCita, $ServicioCita, $FechaCita, $HoraCita, $TelCit
     return $stmt;
 }
 
-//FALATA ENVIAR PARAMETROS BIEN 
-/*function ActualizarCitasModel($Nombre,$Contrasenna,$Correo,$TipoUsuario,$Id)
-{
-  require_once('ConnBD.php');
-  $conex = new Conexion();
-
-  $getConection = $conex->Conectar();
-
-    $procedimiento = "call ActualizarUsuario('$Nombre','$Contrasenna','$Correo',$TipoUsuario,$Id);";
-    $enlace -> query($procedimiento);
-
-    $stmt->execute();
-}*/
-
 function ListarMascota()
 {
   require_once('ConnBD.php');
@@ -138,13 +124,13 @@ function ListarEmpleado()
   return $stmt;
 }
 
-function AgregarEmpleadoModel($NombreEmp, $ApellidoEmp, $TelefonoEmp, $CedulaEmp, $EmailEmp, $PuestoEmp, $SalarioEmp)
+function AgregarEmpleadoModel($NombreEmp, $ApellidoEmp, $TelefonoEmp, $CedulaEmp, $EmailEmp, $PuestoEmp, $SalarioEmp, $idProvincia, $idCanton, $idDistrito)
 {
     require_once('ConnBD.php');
     $conex = new Conexion();
 
     $getConection = $conex->Conectar();
-    $sentencia = $getConection->prepare("BEGIN INSERTAREMPLEADO(:VNOMBREEMP, :VAPELLIDOEMP, :VTELEFONOEMP, :VCEDULAEMP, :VEMAILEMP, :VPUESTOEMP, :VSALARIOEMP); END;");
+    $sentencia = $getConection->prepare("BEGIN INSERTAREMPLEADO(:VNOMBREEMP, :VAPELLIDOEMP, :VTELEFONOEMP, :VCEDULAEMP, :VEMAILEMP, :VPUESTOEMP, :VSALARIOEMP, :IDPROVINCIA, :IDCANTON, :IDDISTRITO); END;");
     $sentencia->bindParam(':VNOMBREEMP',$NombreEmp);
     $sentencia->bindParam(':VAPELLIDOEMP',$ApellidoEmp);
     $sentencia->bindParam(':VTELEFONOEMP',$TelefonoEmp);
@@ -152,6 +138,9 @@ function AgregarEmpleadoModel($NombreEmp, $ApellidoEmp, $TelefonoEmp, $CedulaEmp
     $sentencia->bindParam(':VEMAILEMP',$EmailEmp);
     $sentencia->bindParam(':VPUESTOEMP',$PuestoEmp);
     $sentencia->bindParam(':VSALARIOEMP',$SalarioEmp);
+    $sentencia->bindParam(':IDPROVINCIA',$idProvincia);
+    $sentencia->bindParam(':IDCANTON',$idCanton);
+    $sentencia->bindParam(':IDDISTRITO',$idDistrito);
     $sentencia->execute();
 
     return $sentencia;
@@ -174,9 +163,45 @@ function EditaridCitas($idcita, $servicio_cita, $fecha_cita, $hora_cita, $telefo
     $sentencia->execute();
 
     return $sentencia;
-    
-
   }
 
+//funcion para traer los datos de las provincias
+function ListarProvinciaModel()
+{
+  require_once('ConnBD.php');
+  $conex = new Conexion();
+
+  $getConection = $conex->Conectar();
+
+  $stmt = $getConection->prepare("SELECT * FROM PROVINCIA");
+  $stmt->execute();
+  return $stmt;
+}
+//funcion para traer los datos de los cantones
+function ListarCantonModel()
+{
+  require_once('ConnBD.php');
+  $conex = new Conexion();
+
+  $getConection = $conex->Conectar();
+
+  $stmt = $getConection->prepare("SELECT * FROM CANTON");
+  $stmt->execute();
+  return $stmt;
+
+}
+//funcion para traer los datos de los distritos
+function ListarDistritoModel()
+{
+  require_once('ConnBD.php');
+  $conex = new Conexion();
+
+  $getConection = $conex->Conectar();
+
+  $stmt = $getConection->prepare("SELECT * FROM DISTRITO");
+  $stmt->execute();
+  return $stmt;
+
+}
 
 ?>

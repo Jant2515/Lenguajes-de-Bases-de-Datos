@@ -29,9 +29,7 @@ include_once __DIR__ . '\..\Controller\MascotasController.php';
         <div class="main_content_bg">
             <img src="images/content-bg.jpg" alt="">
         </div>
-
-        <!-- Editar CITA NUEVA -->
-
+        <!-- AGREGAR EMPLEADO -->
         <section class="vh-100 gradient-custom">
             <div class="container py-5 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
@@ -69,7 +67,7 @@ include_once __DIR__ . '\..\Controller\MascotasController.php';
                                         </div>
                                         <div class="form-outline form-white  mb-4">
                                             <label for="inputPassword4" class="form-label">Email</label>
-                                            <input type="text" class="form-control" id="mail_emp"
+                                            <input type="email" class="form-control" id="mail_emp"
                                                 name="mail_emp">
                                         </div>
                                         <div class="form-outline form-white  mb-4">
@@ -82,7 +80,21 @@ include_once __DIR__ . '\..\Controller\MascotasController.php';
                                             <input type="text" class="form-control" id="salario_emp"
                                                 name="salario_emp">
                                         </div>
-
+                                        <div class="form-outline form-white  mb-4">
+                                            <label for="inputPassword4" class="form-label">Provincia</label>
+                                            <select class="form-control" id="id_provincia"
+                                                name="id_provincia"><?php ListaProvincia($stmt["nombre_prov"]); ?></select>
+                                        </div>
+                                        <div class="form-outline form-white  mb-4">
+                                            <label for="inputPassword4" class="form-label">Canton</label>
+                                            <select class="form-control" id="id_canton"
+                                                name="id_canton"><?php ListaCanton($stmt["nombre_cant"]); ?></select>
+                                        </div>
+                                        <div class="form-outline form-white  mb-4">
+                                            <label for="inputPassword4" class="form-label">Distrito</label>
+                                            <select class="form-control" id="id_distrito"
+                                                name="id_distrito"><?php ListaDistrito($stmt["nombre_dist"]); ?></select>
+                                        </div>
                                         <button type="submit" class="btn btn-outline-info btn-lg px-5"
                                             name="agregarEmp">Confirmar</button>
                                     </div>

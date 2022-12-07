@@ -45,19 +45,6 @@ if(isset($_POST["editarCita"]))
     header("Location: Cita.php");
 }
 
-//FALTA ENVIAR PARAMETROS BIEN Y CONFIGURAR BIEN 
-/*if(isset($_POST["btnbtnConfirmar"]))
-{
-    $Nombre = $_POST["servicio_cita"];
-    $Contrasenna = $_POST["fecha_cita"];
-    $Correo = $_POST["hora_cita"];
-    $TipoUsuario = $_POST["telefono_cita"];
-    $Id = $_POST["nombre_mascota_cita"];
-
-    ActualizarCitasModel($Nombre, $Contrasenna, $Correo, $TipoUsuario, $Id);  
-    header("Location: MantUsuario.php");  
-}*/
-
 function Mascotalista()
 {
   $stmt = ListarMascota();
@@ -117,8 +104,8 @@ if(isset($_POST["agregarCliente"]))
   $TelefonoCli = $_POST["telefono_cli"];
   $EmailCli = $_POST["mail_cli"];
   $ProvinciaCli = $_POST["id_provincia"];
-  $CantonCli = $_POST["id_cant"];
-  $DistritoCli = $_POST["salario_emp"];
+  $CantonCli = $_POST["id_canton"];
+  $DistritoCli = $_POST["id_distrito"];
 
   AgregarClienteModel($NombreCli, $ApellidoCli, $TelefonoCli, $EmailCli, $CedulaCli, $ProvinciaCli, $CantonCli, $DistritoCli);
   header("Location: Cliente.php");
@@ -152,8 +139,11 @@ if(isset($_POST["agregarEmp"]))
   $EmailEmp = $_POST["mail_emp"];
   $PuestoEmp = $_POST["puesto_emp"];
   $SalarioEmp = $_POST["salario_emp"];
+  $idProvincia = $_POST["id_provincia"];
+  $idCanton = $_POST["id_canton"];
+  $idDistrito = $_POST["id_distrito"];
 
-  AgregarEmpleadoModel($NombreEmp, $ApellidoEmp, $TelefonoEmp, $CedulaEmp, $EmailEmp, $PuestoEmp, $SalarioEmp);
+  AgregarEmpleadoModel($NombreEmp, $ApellidoEmp, $TelefonoEmp, $CedulaEmp, $EmailEmp, $PuestoEmp, $SalarioEmp, $idProvincia, $idCanton, $idDistrito);
   header("Location: Empleado.php");
 }
 
@@ -181,5 +171,33 @@ if(isset($_POST["Editarcita"]))
  EditaridCitas($idcita, $servicio_cita, $fecha_cita, $hora_cita, $telefono_cita, $nombre_mascota_cita);
   header("Location: Cita.php");
 }
+//funcion para llamar provincias
+function ListaProvincia()
+{
+  $stmt = ListarProvinciaModel();
+  while($row = $stmt->fetch(PDO::FETCH_ASSOC))
+  {
+    echo '<option selected value="' . $row["idprovincia"] . '">' . $row["nombre_prov"] . '</option>';
+  }
+}
+//funcion para llamar cantones
+function ListaCanton()
+{
+  $stmt = ListarCantonModel();
+  while($row1 = $stmt->fetch(PDO::FETCH_ASSOC))
+  {
+    echo '<option selected value="' . $row1["idcanton"] . '">' . $row1["nombre_cant"] . '</option>';
+  }
+}
+//funcion para llamar distritos
+function ListaDistrito()
+{
+  $stmt = ListarDistritoModel();
+  while($row2 = $stmt->fetch(PDO::FETCH_ASSOC))
+  {
+    echo '<option selected value="' . $row2["iddistrito"] . '">' . $row2["nombre_dist"] . '</option>';
+  }
+}
+
 
 ?>

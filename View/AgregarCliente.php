@@ -69,28 +69,24 @@ include_once __DIR__ . '\..\Controller\MascotasController.php';
                                         </div>
                                         <div class="form-outline form-white  mb-4">
                                             <label for="inputPassword4" class="form-label">Email</label>
-                                            <input type="text" class="form-control" id="mail_cli"
-                                                name="mail_Cli">
+                                            <input type="email" class="form-control" id="mail_cli"
+                                                name="mail_cli">
                                         </div>
-
                                         <div class="form-outline form-white  mb-4">
-                                            <label for="inputPassword4" class="form-label">Idprovincia</label>
-                                            <input type="text" class="form-control" id="id_provicinca"
-                                                name="id_provicinca">
+                                            <label for="inputPassword4" class="form-label">Provincia</label>
+                                            <select class="form-control" id="id_provincia"
+                                                name="id_provincia"><?php ListaProvincia($stmt["nombre_prov"]); ?></select>
                                         </div>
-
                                         <div class="form-outline form-white  mb-4">
-                                            <label for="inputPassword4" class="form-label">Idcanton</label>
-                                            <input type="text" class="form-control" id="id_cant"
-                                                name="id_cant">
+                                            <label for="inputPassword4" class="form-label">Canton</label>
+                                            <select class="form-control" id="id_canton"
+                                                name="id_canton"><?php ListaCanton($stmt["nombre_cant"]); ?></select>
                                         </div>
-
                                         <div class="form-outline form-white  mb-4">
-                                            <label for="inputPassword4" class="form-label">IdDistrito</label>
-                                            <input type="text" class="form-control" id="id_dist"
-                                                name="id_dist">
+                                            <label for="inputPassword4" class="form-label">Distrito</label>
+                                            <select class="form-control" id="id_distrito"
+                                                name="id_distrito"><?php ListaDistrito($stmt["nombre_dist"]); ?></select>
                                         </div>
-
                                         <button type="submit" class="btn btn-outline-info btn-lg px-5"
                                             name="agregarCliente">Confirmar</button>
 

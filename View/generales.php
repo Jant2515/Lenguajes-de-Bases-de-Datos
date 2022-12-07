@@ -32,10 +32,6 @@ function navegadorIndex()
           </a>
           <div class="" id="">
             <div class="User_option">
-              <form class="form-inline my-2  mb-3 mb-lg-0">
-                <input type="search" placeholder="Search" />
-                <button class="btn   my-sm-0 nav_search-btn" type="submit"> <i class="fa fa-search" aria-hidden="true"></i> </button>
-              </form>
             </div>
 
             <div class="custom_menu-btn">
@@ -220,10 +216,6 @@ function navegadorOtros()
         </a>
         <div class="" id="">
           <div class="User_option">
-            <form class="form-inline my-2  mb-3 mb-lg-0">
-              <input type="search" placeholder="Search" />
-              <button class="btn   my-sm-0 nav_search-btn" type="submit"> <i class="fa fa-search" aria-hidden="true"></i> </button>
-            </form>
           </div>
 
           <div class="custom_menu-btn">

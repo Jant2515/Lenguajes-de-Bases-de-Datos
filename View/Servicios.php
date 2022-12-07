@@ -34,16 +34,13 @@ include_once __DIR__ . '\generales.php';
         <div class="main_content_bg">
         <img src="images/content-bg.jpg" alt="">
     </div>
-
-
     <div class="templatemo-content-wrapper">
         <div class="templatemo-content">
 
             <div class="templatemo-panels">
-
+                <h2 style="text-align: center; color: #116ebf;">Tabla de Servicios</h2>
                 <div class="row">
                     <div class="col-md-12">
-                        <br /><br /><br />
                         <table id="tbDatos" class="table table-bordered table-hover">
                             <thead>
                                 <tr>

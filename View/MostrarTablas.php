@@ -158,7 +158,7 @@
                   Muestra los detalles de las facturas de la Veterinaria
                 </p>
                 <br>
-                <a class="btn btn-outline-info" href="Cliente.php" type="button">Mostrar Cliente</a>
+                <a class="btn btn-outline-info" href="DetalleFactura.php" type="button">Mostrar Detalles Factura</a>
               </div>
             </div>
           </div>
