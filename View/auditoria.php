@@ -27,7 +27,7 @@ include_once __DIR__ . '\generales.php';
     <div class="main_content_bgg">
       <img src="" alt="">
     </div>
-    <h1 class="auditoria-title">Auditoria</h1>
+    <h1 class="auditoria-title">Auditorias</h1>
     <div class="botones">
     <br>
     <!-- Columna de botones inicio -->
@@ -35,23 +35,21 @@ include_once __DIR__ . '\generales.php';
 
         <div class="row form-group">
           <div class="col-md-3 margin-bottom-15">
-          <label>Consultar empleados mejor pagados</label>
+          <label>Consultar las mascotas que recibieron un Hemograma</label>
           </div>
 
           <div class="col-md-3 margin-bottom-15">
-            <button type="button" class="btn btn-outline-info" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-              Custom button
-            </button>
+            <a href="ConsultaHemograma.php" type="button" class="btn btn-outline-info" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+              Consultar </a>
           </div>
 
           <div class="col-md-3 margin-bottom-15">
-            <button type="button" class="btn btn-outline-info" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-              Custom button
-            </button>
+          <a href="ConsultaGrooming.php" type="button" class="btn btn-outline-info" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+              Consultar </a>
           </div>
 
           <div class="col-md-3 margin-bottom-15">
-          <label>Consultar empleados mejor pagados</label>
+          <label>Consultar las mascotas que recibieron un Grooming</label>
           </div>
         </div>
 
@@ -62,23 +60,21 @@ include_once __DIR__ . '\generales.php';
 
         <div class="row form-group">
           <div class="col-md-3 margin-bottom-15">
-          <label>Consultar empleados mejor pagados</label>
+          <label>Consultar los empleados que son Enfermeros</label>
           </div>
 
           <div class="col-md-3 margin-bottom-15">
-            <button type="button" class="btn btn-outline-info" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-              Custom button
-            </button>
+          <a href="ConsultaEnfermeros.php" type="button" class="btn btn-outline-info" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+              Consultar </a>
           </div>
 
           <div class="col-md-3 margin-bottom-15">
-            <button type="button" class="btn btn-outline-info" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-              Custom button
-            </button>
+          <a href="ConsultaPorDoctor.php" type="button" class="btn btn-outline-info" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+              Consultar </a>
           </div>
 
           <div class="col-md-3 margin-bottom-15">
-          <label>Consultar empleados mejor pagados</label>
+          <label>Consultar las mascotas atendidas con su respectivo Doctor</label>
           </div>
         </div>
 
@@ -89,23 +85,21 @@ include_once __DIR__ . '\generales.php';
 
         <div class="row form-group">
           <div class="col-md-3 margin-bottom-15">
-          <label>Consultar empleados mejor pagados</label>
+          <label>Consultar la totalidad de facturas emitidas</label>
           </div>
 
           <div class="col-md-3 margin-bottom-15">
-            <button type="button" class="btn btn-outline-info" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-              Custom button
-            </button>
+          <a href="ConsultaTotalidad.php" type="button" class="btn btn-outline-info" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+              Consultar </a>
           </div>
 
           <div class="col-md-3 margin-bottom-15">
-            <button type="button" class="btn btn-outline-info" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-              Custom button
-            </button>
+          <a href="ConsultaAltas.php" type="button" class="btn btn-outline-info" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+              Consultar </a>
           </div>
 
           <div class="col-md-3 margin-bottom-15">
-          <label>Consultar empleados mejor pagados</label>
+          <label>Consultar las facturas superiores a ₡20000</label>
           </div>
         </div>
 
@@ -116,29 +110,25 @@ include_once __DIR__ . '\generales.php';
 
         <div class="row form-group">
           <div class="col-md-3 margin-bottom-15">
-          <label>Consultar empleados mejor pagados</label>
+          <label>Consultar las acciones realizadas sobre la tabla Citas</label>
           </div>
 
           <div class="col-md-3 margin-bottom-15">
-            <button type="button" class="btn btn-outline-info" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-              Custom button
-            </button>
+          <a href="ConsultaAuCitas.php" type="button" class="btn btn-outline-info" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+              Consultar </a>
           </div>
 
           <div class="col-md-3 margin-bottom-15">
-            <button type="button" class="btn btn-outline-info" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-              Custom button
-            </button>
+          
           </div>
 
           <div class="col-md-3 margin-bottom-15">
-          <label>Consultar empleados mejor pagados</label>
+          
           </div>
         </div>
 
       </div>
       <!-- Columna de botones fin -->
-
     </div>
     <br><br>
     <!-- info section -->
