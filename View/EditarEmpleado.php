@@ -8,7 +8,7 @@ $conex = new Conexion();
 $getConection= $conex-> Conectar(); 
  
 
-$ci=$_GET['q']; 
+$ci=$_GET['id']; 
 $sql="select*from empleados where idempleado=$ci"; 
 $stmt=$getConection-> prepare($sql);
  $stmt-> execute(); 
