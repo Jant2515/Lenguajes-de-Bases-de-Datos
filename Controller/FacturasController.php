@@ -1,7 +1,5 @@
 <?php
-
 include_once __DIR__ . '\..\Model\FacturasModel.php';
-
 function FacturaLista()
 {
   $stmt = ListarFactura();
@@ -14,30 +12,33 @@ function FacturaLista()
     echo '<td>' . $row["nombre_cliente_fact"] . '</td>';
     echo '<td>' . $row["nombre_mascota_fact"] . '</td>';
     echo '<td>' . $row["subtotal_fact"] . '</td>';
-    echo '<td><a type="button" href="EditarFactura.php" class="btn btn-outline-secondary">Editar</a>';
+    echo '<td><a type="button" href="EditarFactura.php?q='.$row['idfactura'].'" class="btn btn-outline-secondary">Editar</a>';
     echo '<td><a type="button" class="btn btn-outline-danger">Eliminar</a>';
     echo '</tr>';
   }
 }
-
-if(isset($_POST["agregarServicio"]))
+if(isset($_POST["btnGuardar"]))
 {
-    $NombreServicio = $_POST["nombreServicio"];
-    $DescipcionServicio= $_POST["DescripcionServicio"];
-    $PrecioServicio = $_POST["PrecioServicio"];
-
-    AgregarServiciosModel($NombreServicio, $DescipcionServicio, $PrecioServicio);
-    header("Location: Servicios.php");
+    $FechaFact = $_POST["nombreServicio"];
+    $NombreVetFact= $_POST["txtVeterinaria"];
+    $TelVetFact = $_POST["txtTelefono"];
+    $NombreCliFact = $_POST["txtNomCliente"];
+    $NombreMascFact= $_POST["txtNomMascota"];
+    $SubtotalFact = $_POST["txtSubtotal"];
+    AgregarFacturaModel($FechaFact, $NombreVetFact, $TelVetFact, $NombreCliFact, $NombreMascFact, $SubtotalFact);
+    header("Location: Factura.php");
 }
 
-if(isset($_POST["editarServicio"]))
+if(isset($_POST["btnConfirmar"]))
 {
-    $IDServicio = $_POST["idServicio"];
-    $NombreServicio = $_POST["nombreServicio"];
-    $DescipcionServicio= $_POST["DescripcionServicio"];
-    $PrecioServicio = $_POST["PrecioServicio"];
-
-    EditarServiciosModel($IDServicio, $NombreServicio, $DescipcionServicio, $PrecioServicio);
-    header("Location: Servicios.php");
+  $IDFactura = $_POST["idFact"];
+  $FechaFact = $_POST["nombreServicio"];
+  $NombreVetFact= $_POST["txtVeterinaria"];
+  $TelVetFact = $_POST["txtTelefono"];
+  $NombreCliFact = $_POST["txtNomCliente"];
+  $NombreMascFact= $_POST["txtNomMascota"];
+  $SubtotalFact = $_POST["txtSubtotal"];
+    EditarFacturaModel($IDFactura, $FechaFact, $NombreVetFact, $TelVetFact, $NombreCliFact, $NombreMascFact, $SubtotalFact);
+    header("Location: Factura.php");
 }
 ?>
