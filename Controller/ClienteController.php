@@ -19,7 +19,6 @@ function Clientelista()
     echo '</tr>';
   }
 }
-
 if(isset($_POST["agregarCliente"]))
 {
   $CedulaCli = $_POST["cedula_cli"];
@@ -32,6 +31,22 @@ if(isset($_POST["agregarCliente"]))
   $DistritoCli = $_POST["id_distrito"];
 
   AgregarClienteModel($NombreCli, $ApellidoCli, $TelefonoCli, $EmailCli, $CedulaCli, $ProvinciaCli, $CantonCli, $DistritoCli);
+  header("Location: Cliente.php");
+}
+
+if(isset($_POST["btnConfirmar"]))
+{
+  $IDCli = $_POST["idCli"];
+  $CedulaCli = $_POST["cedula_cli"];
+  $NombreCli = $_POST["nombre_cli"];
+  $ApellidoCli = $_POST["apellido_cli"];
+  $TelefonoCli = $_POST["telefono_cli"];
+  $EmailCli = $_POST["mail_cli"];
+  $ProvinciaCli = $_POST["id_provincia"];
+  $CantonCli = $_POST["id_canton"];
+  $DistritoCli = $_POST["id_distrito"];
+
+  EditarClienteModel($IDCli, $NombreCli, $ApellidoCli, $TelefonoCli, $EmailCli, $CedulaCli, $ProvinciaCli, $CantonCli, $DistritoCli);
   header("Location: Cliente.php");
 }
 
@@ -62,6 +77,4 @@ function ListaDistrito()
     echo '<option selected value="' . $row2["iddistrito"] . '">' . $row2["nombre_dist"] . '</option>';
   }
 }
-
-
 ?>

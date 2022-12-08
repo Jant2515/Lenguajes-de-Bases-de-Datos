@@ -12,31 +12,41 @@ function ListarFactura()
 
   return $stmt;
 }
-
-function AgregarServiciosModel($NombreServicio, $DescipcionServicio, $PrecioServicio)
+function AgregarFacturaModel($FechaFact, $NombreVetFact, $TelVetFact, $NombreCliFact, $NombreMascFact, $SubtotalFact)
 {
-    require_once('ConnBD.php');
-    $conex = new Conexion();
+  require_once('ConnBD.php');
+  $conex = new Conexion();
 
-    $getConection = $conex->Conectar();
+  $getConection = $conex->Conectar();
+  $sentencia = $getConection->prepare("BEGIN INSERTAR_FACTURA(:VFECHA_FACT, :VNOMBRE_VET_FACT, :VTELEFONO_VET_FACT, :VNOMBRE_CLIENTE_FACT, :VNOMBRE_MASCOTA_FACT, :VSUBTOTAL_FACT); END;");
+  $sentencia->bindParam(':VFECHA_FACT',$FechaFact);
+  $sentencia->bindParam(':VNOMBRE_VET_FACT',$NombreVetFact);
+  $sentencia->bindParam(':VTELEFONO_VET_FACT',$TelVetFact);
+  $sentencia->bindParam(':VNOMBRE_CLIENTE_FACT',$NombreCliFact);
+  $sentencia->bindParam(':VNOMBRE_MASCOTA_FACT',$NombreMascFact);
+  $sentencia->bindParam(':VSUBTOTAL_FACT',$SubtotalFact);
+  $sentencia->execute();
 
-    $stmt = $getConection->prepare("EXECUDE INSERTAR_SERVICIOS('$NombreServicio', '$DescipcionServicio', '$PrecioServicio')");
-    $stmt->execute();
-
-    return $stmt;
+  return $sentencia;
 
 }
 
-function EditarServiciosModel($IDServicio, $NombreServicio, $DescipcionServicio, $PrecioServicio)
+function EditarFacturaModel($IDFactura, $FechaFact, $NombreVetFact, $TelVetFact, $NombreCliFact, $NombreMascFact, $SubtotalFact)
 {
     require_once('ConnBD.php');
     $conex = new Conexion();
 
     $getConection = $conex->Conectar();
+    $sentencia = $getConection->prepare("BEGIN INSERTAR_FACTURA(:VIDFACTURA, :VFECHA_FACT, :VNOMBRE_VET_FACT, :VTELEFONO_VET_FACT, :VNOMBRE_CLIENTE_FACT, :VNOMBRE_MASCOTA_FACT, :VSUBTOTAL_FACT); END;");
+    $sentencia->bindParam(':VIDFACTURA',$IDFactura);
+    $sentencia->bindParam(':VFECHA_FACT',$FechaFact);
+    $sentencia->bindParam(':VNOMBRE_VET_FACT',$NombreVetFact);
+    $sentencia->bindParam(':VTELEFONO_VET_FACT',$TelVetFact);
+    $sentencia->bindParam(':VNOMBRE_CLIENTE_FACT',$NombreCliFact);
+    $sentencia->bindParam(':VNOMBRE_MASCOTA_FACT',$NombreMascFact);
+    $sentencia->bindParam(':VSUBTOTAL_FACT',$SubtotalFact);
+    $sentencia->execute();
 
-    $stmt = $getConection->prepare("EXECUDE EDITAR_SERVICIO('$IDServicio', '$NombreServicio', '$DescipcionServicio', '$PrecioServicio')");
-    $stmt->execute();
-
-    return $stmt;
+    return $sentencia;
 }
 ?>

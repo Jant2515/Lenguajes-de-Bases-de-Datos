@@ -51,7 +51,7 @@ if(isset($_POST["btnEditar"]))
   $DescuentoDet = $_POST["txtDescuento"]; 
   $IvaDet = $_POST["txtIva"];
   $TotalDet = $_POST["txtTotal"];
-    EditarServiciosModel($IDdetalle, $NumLineaDet, $FechaDet, $NombreVetDet, $TelVetDet, $NombreCliDet, $NombreMascDet, $DescripcionDet, $SubtotalDet,  $DescuentoDet, $IvaDet, $TotalDet);
+    EditarDetalleModel($IDdetalle, $NumLineaDet, $FechaDet, $NombreVetDet, $TelVetDet, $NombreCliDet, $NombreMascDet, $DescripcionDet, $SubtotalDet,  $DescuentoDet, $IvaDet, $TotalDet);
     header("Location: DetalleFactura.php");
 }
 ?>

@@ -34,8 +34,29 @@ function AgregarEmpleadoModel($NombreEmp, $ApellidoEmp, $TelefonoEmp, $CedulaEmp
 
     return $sentencia;
 }
-//function EditarEmpleadosModel($IdEmp, $NombreEmp, $ApellidoEmp, $TelefonoEmp, $CedulaEmp, $EmailEmp, $PuestoEmp, $SalarioEmp, $idProvincia, $idCanton, $idDistrito)
 
+function EditarEmpleadoModel($IdEmp, $NombreEmp, $ApellidoEmp, $TelefonoEmp, $CedulaEmp, $EmailEmp, $PuestoEmp, $SalarioEmp, $idProvincia, $idCanton, $idDistrito)
+{
+    require_once('ConnBD.php');
+    $conex = new Conexion();
+
+    $getConection = $conex->Conectar();
+    $sentencia = $getConection->prepare("BEGIN Editarempleado(:VID ,:VNOMBREEMP, :VAPELLIDOEMP, :VTELEFONOEMP, :VCEDULAEMP, :VEMAILEMP, :VPUESTOEMP, :VSALARIOEMP, :IDPROVINCIA, :IDCANTON, :IDDISTRITO); END;");
+    $sentencia->bindParam(':VID',$IdEmp);
+    $sentencia->bindParam(':VNOMBREEMP',$NombreEmp);
+    $sentencia->bindParam(':VAPELLIDOEMP',$ApellidoEmp);
+    $sentencia->bindParam(':VTELEFONOEMP',$TelefonoEmp);
+    $sentencia->bindParam(':VCEDULAEMP',$CedulaEmp);
+    $sentencia->bindParam(':VEMAILEMP',$EmailEmp);
+    $sentencia->bindParam(':VPUESTOEMP',$PuestoEmp);
+    $sentencia->bindParam(':VSALARIOEMP',$SalarioEmp);
+    $sentencia->bindParam(':IDPROVINCIA',$idProvincia);
+    $sentencia->bindParam(':IDCANTON',$idCanton);
+    $sentencia->bindParam(':IDDISTRITO',$idDistrito);
+    $sentencia->execute();
+
+    return $sentencia;
+}
 //funcion para traer los datos de las provincias
 function ListarProvinciaModel()
 {
@@ -74,5 +95,4 @@ function ListarDistritoModel()
   return $stmt;
 
 }
-
 ?>

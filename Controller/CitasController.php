@@ -34,14 +34,14 @@ if(isset($_POST["agregarCita"]))
 
 if(isset($_POST["editarCita"]))
 {
-    $IDCita = $_POST["idCita"];
-    $ServicioCita = $_POST["serviciocita"];
-    $FechaCita= $_POST["fechacita"];
-    $HoraCita = $_POST["horacita"];
-    $TelCita = $_POST["telcita"];
-    $MascotaCita = $_POST["mascotacita"];
+    $idcita = $_POST["idCita"];
+    $servicio_cita = $_POST["serviciocita"];
+    $fecha_cita= $_POST["fechacita"];
+    $hora_cita = $_POST["horacita"];
+    $telefono_cita = $_POST["telcita"];
+    $nombre_mascota_cita = $_POST["mascotacita"];
 
-    EditarCitasModel($IDCita, $ServicioCita, $FechaCita, $HoraCita, $TelCita, $MascotaCita);
+    EditarCitasModel($idcita, $servicio_cita, $fecha_cita, $hora_cita, $telefono_cita, $nombre_mascota_cita);
     header("Location: Cita.php");
 }
 

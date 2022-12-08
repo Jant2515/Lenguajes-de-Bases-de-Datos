@@ -13,7 +13,7 @@ function ListarServicios()
   return $stmt;
 }
 
-function AgregarServiciosModel($NombreServicio, $DescipcionServicio, $PrecioServicio)
+function AgregarServiciosModel($NombreServicio, $DescripcionServicio, $PrecioServicio)
 {
     require_once('ConnBD.php');
     $conex = new Conexion();
@@ -21,7 +21,7 @@ function AgregarServiciosModel($NombreServicio, $DescipcionServicio, $PrecioServ
     $getConection = $conex->Conectar();
     $sentencia = $getConection->prepare("BEGIN CrearCita(:VNOMSERVICIO ,:VDESCRIPCION, :VPRECIO); END;");
     $sentencia->bindParam(':VNOMSERVICIO',$NombreServicio);
-    $sentencia->bindParam(':VDESCRIPCION',$DescipcionServicio);
+    $sentencia->bindParam(':VDESCRIPCION',$DescripcionServicio);
     $sentencia->bindParam(':VPRECIO',$PrecioServicio);
     $sentencia->execute();
 
@@ -29,17 +29,22 @@ function AgregarServiciosModel($NombreServicio, $DescipcionServicio, $PrecioServ
 
 }
 
-function EditarServiciosModel($IDServicio, $NombreServicio, $DescipcionServicio, $PrecioServicio)
+function EditarServiciosModel($IDServicio, $NombreServicio, $DescripcionServicio, $PrecioServicio)
 {
     require_once('ConnBD.php');
     $conex = new Conexion();
 
     $getConection = $conex->Conectar();
 
-    $stmt = $getConection->prepare("EXECUDE EDITAR_SERVICIO('$IDServicio', '$NombreServicio', '$DescipcionServicio', '$PrecioServicio')");
+    $stmt = $getConection->prepare("BEGIN EDITAR_SERVICIO(:VID, :VNOMSERVICIO ,:VDESCRIPCION, :VPRECIO); END;");
+    $sentencia->bindParam(':VID',$IDServicio);
+    $sentencia->bindParam(':VNOMSERVICIO',$NombreServicio);
+    $sentencia->bindParam(':VDESCRIPCION',$DescripcionServicio);
+    $sentencia->bindParam(':VPRECIO',$PrecioServicio);
+    $sentencia->execute();
     $stmt->execute();
 
-    return $stmt;
+    return $sentencia;
 }
 
 

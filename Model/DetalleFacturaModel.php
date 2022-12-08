@@ -13,30 +13,51 @@ function ListarDetalle()
   return $stmt;
 }
 
-function AgregarServiciosModel($NombreServicio, $DescipcionServicio, $PrecioServicio)
+function AgregarDetalleModel($NumLineaDet, $FechaDet, $NombreVetDet, $TelVetDet, $NombreCliDet, $NombreMascDet, $DescripcionDet, $SubtotalDet,  $DescuentoDet, $IvaDet, $TotalDet)
 {
     require_once('ConnBD.php');
     $conex = new Conexion();
 
     $getConection = $conex->Conectar();
-
-    $stmt = $getConection->prepare("EXECUDE INSERTAR_SERVICIOS('$NombreServicio', '$DescipcionServicio', '$PrecioServicio')");
-    $stmt->execute();
-
-    return $stmt;
+    $sentencia = $getConection->prepare("BEGIN INSERTAR_DETALLE_FACTURA(:VNUMERO_LINEA_DET, :VFECHA_DET, :VNOMBRE_VET_DET, :VTELEFONO_VET_DET, :VNOMBRE_CLIENTE_DET, :VNOMBRE_MASCOTA_DET, :VDESCRIPCION_DET, :VSUBTOTAL_DET, :VDESCUENTO_DET, :VIVA_DET, :VTOTAL_DET); END;");
+    $sentencia->bindParam(':VNUMERO_LINEA_DET',$NumLineaDet);
+    $sentencia->bindParam(':VFECHA_DET',$FechaDet);
+    $sentencia->bindParam(':VNOMBRE_VET_DET',$NombreVetDet);
+    $sentencia->bindParam(':VTELEFONO_VET_DET',$TelVetDet);
+    $sentencia->bindParam(':VNOMBRE_CLIENTE_DET',$NombreCliDet);
+    $sentencia->bindParam(':VNOMBRE_MASCOTA_DET',$NombreMascDet);
+    $sentencia->bindParam(':VDESCRIPCION_DET',$DescripcionDet);
+    $sentencia->bindParam(':VSUBTOTAL_DET',$SubtotalDet);
+    $sentencia->bindParam(':VDESCUENTO_DET',$DescuentoDet);
+    $sentencia->bindParam(':VIVA_DET',$IvaDet);
+    $sentencia->bindParam(':VTOTAL_DET',$TotalDet);
+    $sentencia->execute();
+    
+    return $sentencia;
 
 }
 
-function EditarServiciosModel($IDServicio, $NombreServicio, $DescipcionServicio, $PrecioServicio)
+function EditarDetalleModel($IDdetalle, $NumLineaDet, $FechaDet, $NombreVetDet, $TelVetDet, $NombreCliDet, $NombreMascDet, $DescripcionDet, $SubtotalDet,  $DescuentoDet, $IvaDet, $TotalDet)
 {
     require_once('ConnBD.php');
     $conex = new Conexion();
 
     $getConection = $conex->Conectar();
+    $sentencia = $getConection->prepare("BEGIN EDITAR_DETALLE_FACTURA (:VIDDETALLE_FACTURA, :VNUMERO_LINEA_DET, :VFECHA_DET, :VNOMBRE_VET_DET, :VTELEFONO_VET_DET, :VNOMBRE_CLIENTE_DET, :VNOMBRE_MASCOTA_DET, :VDESCRIPCION_DET, :VSUBTOTAL_DET, :VDESCUENTO_DET, :VIVA_DET, :VTOTAL_DET); END;");
+    $sentencia->bindParam(':VIDDETALLE_FACTURA',$IDdetalle);
+    $sentencia->bindParam(':VNUMERO_LINEA_DET',$NumLineaDet);
+    $sentencia->bindParam(':VFECHA_DET',$FechaDet);
+    $sentencia->bindParam(':VNOMBRE_VET_DET',$NombreVetDet);
+    $sentencia->bindParam(':VTELEFONO_VET_DET',$TelVetDet);
+    $sentencia->bindParam(':VNOMBRE_CLIENTE_DET',$NombreCliDet);
+    $sentencia->bindParam(':VNOMBRE_MASCOTA_DET',$NombreMascDet);
+    $sentencia->bindParam(':VDESCRIPCION_DET',$DescripcionDet);
+    $sentencia->bindParam(':VSUBTOTAL_DET',$SubtotalDet);
+    $sentencia->bindParam(':VDESCUENTO_DET',$DescuentoDet);
+    $sentencia->bindParam(':VIVA_DET',$IvaDet);
+    $sentencia->bindParam(':VTOTAL_DET',$TotalDet);
+    $sentencia->execute();
 
-    $stmt = $getConection->prepare("EXECUDE EDITAR_SERVICIO('$IDServicio', '$NombreServicio', '$DescipcionServicio', '$PrecioServicio')");
-    $stmt->execute();
-
-    return $stmt;
+    return $sentencia;
 }
 ?>

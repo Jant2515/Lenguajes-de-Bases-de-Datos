@@ -53,7 +53,7 @@ if(isset($_POST["btnConfirmar"]))
   $idCanton = $_POST["id_canton"];
   $idDistrito = $_POST["id_distrito"];
 
-  //EditarEmpleadosModel($NombreEmp, $ApellidoEmp, $TelefonoEmp, $CedulaEmp, $EmailEmp, $PuestoEmp, $SalarioEmp, $idProvincia, $idCanton, $idDistrito);
+  EditarEmpleadoModel($IdEmp, $NombreEmp, $ApellidoEmp, $TelefonoEmp, $CedulaEmp, $EmailEmp, $PuestoEmp, $SalarioEmp, $idProvincia, $idCanton, $idDistrito);
   header("Location: Empleado.php");
 }
 

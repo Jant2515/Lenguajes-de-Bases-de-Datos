@@ -12,8 +12,6 @@ function ListarCitas()
 
   return $stmt;
 }
-
-//REVISAR ESTOS PROCEDIMIENTOS 
 function AgregarCitasModel($ServicioCita, $FechaCita, $HoraCita, $TelCita, $MascotaCita)
 {
     require_once('ConnBD.php');
@@ -31,20 +29,7 @@ function AgregarCitasModel($ServicioCita, $FechaCita, $HoraCita, $TelCita, $Masc
     return $sentencia;
 }
 
-function EditarCitasModel($IDCita, $ServicioCita, $FechaCita, $HoraCita, $TelCita, $MascotaCita)
-{
-    require_once('ConnBD.php');
-    $conex = new Conexion();
-
-    $getConection = $conex->Conectar();
-
-    $stmt = $getConection->prepare("EXECUDE EDITAR_CITA('$IDCita', '$ServicioCita', '$FechaCita', '$HoraCita', '$TelCita', '$MascotaCita')");
-    $stmt->execute();
-
-    return $stmt;
-}
-
-function EditaridCitas($idcita, $servicio_cita, $fecha_cita, $hora_cita, $telefono_cita, $nombre_mascota_cita)
+function EditarCitasModel($idcita, $servicio_cita, $fecha_cita, $hora_cita, $telefono_cita, $nombre_mascota_cita)
 {
     require_once('ConnBD.php');
     $conex = new Conexion();
@@ -61,5 +46,4 @@ function EditaridCitas($idcita, $servicio_cita, $fecha_cita, $hora_cita, $telefo
 
     return $sentencia;
   }
-
 ?>
