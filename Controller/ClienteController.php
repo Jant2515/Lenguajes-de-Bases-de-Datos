@@ -15,7 +15,7 @@ function Clientelista()
     echo '<td>' . $row["telefonocliente"] . '</td>';
     echo '<td>' . $row["emailcliente"] . '</td>';
     echo '<td><a type="button" href="EditarCliente.php?q='. $row['idcliente']. '" class="btn btn-outline-secondary">Editar</a>';
-    echo '<td><a type="button" class="btn btn-outline-danger">Eliminar</a>';
+    echo '<td><a type="button" href="EliminarCliente.php?q='. $row['idcliente']. '"class="btn btn-outline-danger">Eliminar</a>';
     echo '</tr>';
   }
 }
@@ -42,11 +42,8 @@ if(isset($_POST["btnConfirmar"]))
   $ApellidoCli = $_POST["apellido_cli"];
   $TelefonoCli = $_POST["telefono_cli"];
   $EmailCli = $_POST["mail_cli"];
-  $ProvinciaCli = $_POST["id_provincia"];
-  $CantonCli = $_POST["id_canton"];
-  $DistritoCli = $_POST["id_distrito"];
 
-  EditarClienteModel($IDCli, $NombreCli, $ApellidoCli, $TelefonoCli, $EmailCli, $CedulaCli, $ProvinciaCli, $CantonCli, $DistritoCli);
+  EditarClienteModel($IDCli, $NombreCli, $ApellidoCli, $TelefonoCli, $EmailCli, $CedulaCli);
   header("Location: Cliente.php");
 }
 

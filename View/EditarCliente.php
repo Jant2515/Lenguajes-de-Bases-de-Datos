@@ -88,7 +88,7 @@ $stmt=$getConection-> prepare($sql);
                                         <div class="form-outline form-white  mb-4">
                                             <label for="inputPassword4" class="form-label">Email</label>
                                             <input type="text" class="form-control" id="mail_cli"
-                                                name="mail_Cli" value="<?php echo $emailcli?>">
+                                                name="mail_cli" value="<?php echo $emailcli?>">
                                         </div>
                 
                                         <button type="submit" class="btn btn-outline-info btn-lg px-5"

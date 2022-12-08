@@ -51,7 +51,6 @@ include_once __DIR__ . '\generales.php';
                                     <th>Hora</th>
                                     <th>Telefono</th>
                                     <th>Nombre de Mascota</th>
-                                    <th>idempleado</th>
                                     <th>Editar Cita</th>
                                     <th>Eliminar Cita</th>
                                 </tr>

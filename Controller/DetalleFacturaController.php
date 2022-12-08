@@ -16,8 +16,7 @@ function DetalleLista()
     echo '<td>' . $row["descuento_det"] . '</td>'; 
     echo '<td>' . $row["iva_det"] . '</td>'; 
     echo '<td>' . $row["total_det"] . '</td>'; 
-    echo '<td><a type="button" href="EditarFactura.php?q='.$row['iddetalle_factura'].'" class="btn btn-outline-secondary">Editar</a>';
-    echo '<td><a type="button" class="btn btn-outline-danger">Eliminar</a>';
+    echo '<td><a type="button" href="EliminarDetalle.php?id='.$row['iddetalle_factura'].'"class="btn btn-outline-danger">Eliminar</a>';
     echo '</tr>';
   }
 }

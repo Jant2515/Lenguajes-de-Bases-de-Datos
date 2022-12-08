@@ -12,14 +12,13 @@ function ListarFactura()
 
   return $stmt;
 }
-function AgregarFacturaModel($FechaFact, $NombreVetFact, $TelVetFact, $NombreCliFact, $NombreMascFact, $SubtotalFact)
+function AgregarFacturaModel($NombreVetFact, $TelVetFact, $NombreCliFact, $NombreMascFact, $SubtotalFact)
 {
   require_once('ConnBD.php');
   $conex = new Conexion();
 
   $getConection = $conex->Conectar();
-  $sentencia = $getConection->prepare("BEGIN INSERTAR_FACTURA(:VFECHA_FACT, :VNOMBRE_VET_FACT, :VTELEFONO_VET_FACT, :VNOMBRE_CLIENTE_FACT, :VNOMBRE_MASCOTA_FACT, :VSUBTOTAL_FACT); END;");
-  $sentencia->bindParam(':VFECHA_FACT',$FechaFact);
+  $sentencia = $getConection->prepare("BEGIN INSERTAR_FACTURA(:VNOMBRE_VET_FACT, :VTELEFONO_VET_FACT, :VNOMBRE_CLIENTE_FACT, :VNOMBRE_MASCOTA_FACT, :VSUBTOTAL_FACT); END;");
   $sentencia->bindParam(':VNOMBRE_VET_FACT',$NombreVetFact);
   $sentencia->bindParam(':VTELEFONO_VET_FACT',$TelVetFact);
   $sentencia->bindParam(':VNOMBRE_CLIENTE_FACT',$NombreCliFact);

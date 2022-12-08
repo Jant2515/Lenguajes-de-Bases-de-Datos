@@ -57,7 +57,6 @@ include_once __DIR__ . '\generales.php';
                                     <th>Descuento</th>
                                     <th>Iva</th>
                                     <th>Total</th>
-                                    <th>Editar Cita</th>
                                     <th>Eliminar Cita</th>
                                 </tr>
                             </thead>
@@ -75,7 +74,7 @@ include_once __DIR__ . '\generales.php';
         </div>
     </div>
     <div class="d-grid gap-2 col-6 mx-auto">
-    <a class="btn btn-outline-info" href="AgregarFactura.php" type="button">Agregar Factura</a>
+    <a class="btn btn-outline-info" href="AgregarDetalleFactura.php" type="button">Agregar Factura</a>
     </div>
     <br>
     <?php

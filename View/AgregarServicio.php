@@ -1,6 +1,6 @@
 <?php
 include_once __DIR__ . '/generales.php';
-include_once __DIR__ . '\..\Controller\MascotasController.php';
+include_once __DIR__ . '\..\Controller\ServiciosController.php';
 ?>
 
 <!DOCTYPE html>
@@ -60,7 +60,7 @@ include_once __DIR__ . '\..\Controller\MascotasController.php';
                                             <input type="number" min = "1" class="form-control" id="PrecioServicio" name="PrecioServicio">
                                         </div></br></br>
                                         <button type="submit" class="btn btn-outline-info btn-lg px-5"
-                                            name="agregarServicio">Agregar</button>
+                                        id="agregarServicio" name="agregarServicio">Agregar</button>
 
                                     </div>
                                 </form>

@@ -53,6 +53,8 @@ include_once __DIR__ . '\generales.php';
                                     <th>Esterilizado</th>
                                     <th>Pedigree</th>
                                     <th>Dueño</th>
+                                    <th>Editar</th>
+                                    <th>Eliminar</th>
                                 </tr>
                             </thead>
                             <tbody>

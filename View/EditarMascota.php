@@ -1,14 +1,10 @@
 <?php
 include_once __DIR__ . '/generales.php';
 include_once __DIR__ . '\..\Controller\MascotasController.php';
-
 include_once __DIR__ . '/../Model/ConnBD.php';
-
 $conex = new Conexion(); 
 $getConection= $conex-> Conectar(); 
- 
-
-$ci=$_GET['q']; 
+$ci=$_GET['id']; 
 $sql="select*from mascota where idmascota=$ci"; 
 $stmt=$getConection-> prepare($sql);
  $stmt-> execute(); 
@@ -22,21 +18,15 @@ $stmt=$getConection-> prepare($sql);
    $TallaMas=$row['talla_masc'];
    $EsterilizadoMas=$row['esterelizado_masc']; 
    $PedigreeMas=$row['pedigree_masc']; 
-
 }
 ?>
-
 <!DOCTYPE html>
-
 <head>
     <?php
     LinksOtros();
     ?>
 </head>
-
-
 <body class="sub_page">
-
     <div class="hero_area ">
         <div class="hero_bg_box">
             <img src="images/hero-bg.jpg" alt="">
@@ -47,14 +37,11 @@ $stmt=$getConection-> prepare($sql);
     ?>
         <!-- end header section -->
     </div>
-
     <div class="main_content">
         <div class="main_content_bg">
             <img src="images/content-bg.jpg" alt="">
         </div>
-
         <!-- Editar CITA NUEVA -->
-
         <section class="vh-100 gradient-custom">
             <div class="container py-5 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
@@ -67,7 +54,7 @@ $stmt=$getConection-> prepare($sql);
                                             <h2 class="fw-bold mb-2 text-uppercase">Editar Macota</h2>
                                         </h2>
                                         <p class="text-black-50 mb-5">Edite los datos necesarios</p>
-                                        <input type="hidden" value="<?php echo $IDMas?>" id="id_emp" name="id_emp">
+                                        <input type="hidden" value="<?php echo $IDMas?>" id="id_masc" name="id_masc">
                                         <div class="form-outline form-white  mb-4">
                                             <label for="inputEmail4" class="form-label">Nombre Mascota</label>
                                             <input type="text" class="form-control" id="nombre_masc" name="nombre_masc"
@@ -81,13 +68,13 @@ $stmt=$getConection-> prepare($sql);
                                         </div>
                                         <div class="form-outline form-white  mb-4">
                                             <label for="inputPassword4" class="form-label">Edad</label>
-                                            <input type="text" class="form-control" id="edad"
+                                            <input type="number" class="form-control" id="edad"
                                                 name="edad"
                                                 value="<?php echo $EdadMas?>">
                                         </div>
                                         <div class="form-outline form-white  mb-4">
                                             <label for="inputPassword4" class="form-label">Peso</label>
-                                            <input type="text" class="form-control" id="peso"
+                                            <input type="number" class="form-control" id="peso"
                                                 name="peso"
                                                 value="<?php echo $PesoMas?>">
                                         </div>
@@ -115,8 +102,6 @@ $stmt=$getConection-> prepare($sql);
                                                 name="pedigree"
                                                 value="<?php echo $PedigreeMas?>">
                                         </div>
-            
-                                     
                                         <button type="submit" class="btn btn-outline-info btn-lg px-5"
                                             name="btnConfirmar">Confirmar</button>
                                     </div>
@@ -141,5 +126,4 @@ $stmt=$getConection-> prepare($sql);
         <script src="js/custom.js"></script>
         <!-- Google Map -->
 </body>
-
 </html>

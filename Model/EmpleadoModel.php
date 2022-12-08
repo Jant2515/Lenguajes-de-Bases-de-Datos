@@ -19,7 +19,7 @@ function AgregarEmpleadoModel($NombreEmp, $ApellidoEmp, $TelefonoEmp, $CedulaEmp
     $conex = new Conexion();
 
     $getConection = $conex->Conectar();
-    $sentencia = $getConection->prepare("BEGIN INSERTAREMPLEADO(:VNOMBREEMP, :VAPELLIDOEMP, :VTELEFONOEMP, :VCEDULAEMP, :VEMAILEMP, :VPUESTOEMP, :VSALARIOEMP, :IDPROVINCIA, :IDCANTON, :IDDISTRITO); END;");
+    $sentencia = $getConection->prepare("BEGIN INSERTAREMPLEADO(:VNOMBREEMP, :VAPELLIDOEMP, :VTELEFONOEMP, :VCEDULAEMP, :VEMAILEMP, :VPUESTOEMP, :VSALARIOEMP, :VIDPROVINCIA, :VIDCANTON, :VIDDISTRITO); END;");
     $sentencia->bindParam(':VNOMBREEMP',$NombreEmp);
     $sentencia->bindParam(':VAPELLIDOEMP',$ApellidoEmp);
     $sentencia->bindParam(':VTELEFONOEMP',$TelefonoEmp);
@@ -27,21 +27,21 @@ function AgregarEmpleadoModel($NombreEmp, $ApellidoEmp, $TelefonoEmp, $CedulaEmp
     $sentencia->bindParam(':VEMAILEMP',$EmailEmp);
     $sentencia->bindParam(':VPUESTOEMP',$PuestoEmp);
     $sentencia->bindParam(':VSALARIOEMP',$SalarioEmp);
-    $sentencia->bindParam(':IDPROVINCIA',$idProvincia);
-    $sentencia->bindParam(':IDCANTON',$idCanton);
-    $sentencia->bindParam(':IDDISTRITO',$idDistrito);
+    $sentencia->bindParam(':VIDPROVINCIA',$idProvincia);
+    $sentencia->bindParam(':VIDCANTON',$idCanton);
+    $sentencia->bindParam(':VIDDISTRITO',$idDistrito);
     $sentencia->execute();
 
     return $sentencia;
 }
 
-function EditarEmpleadoModel($IdEmp, $NombreEmp, $ApellidoEmp, $TelefonoEmp, $CedulaEmp, $EmailEmp, $PuestoEmp, $SalarioEmp, $idProvincia, $idCanton, $idDistrito)
+function EditarEmpleadoModel($IdEmp, $NombreEmp, $ApellidoEmp, $TelefonoEmp, $CedulaEmp, $EmailEmp, $PuestoEmp, $SalarioEmp)
 {
     require_once('ConnBD.php');
     $conex = new Conexion();
 
     $getConection = $conex->Conectar();
-    $sentencia = $getConection->prepare("BEGIN Editarempleado(:VID ,:VNOMBREEMP, :VAPELLIDOEMP, :VTELEFONOEMP, :VCEDULAEMP, :VEMAILEMP, :VPUESTOEMP, :VSALARIOEMP, :IDPROVINCIA, :IDCANTON, :IDDISTRITO); END;");
+    $sentencia = $getConection->prepare("BEGIN Editarempleado(:VID ,:VNOMBREEMP, :VAPELLIDOEMP, :VTELEFONOEMP, :VCEDULAEMP, :VEMAILEMP, :VPUESTOEMP, :VSALARIOEMP); END;");
     $sentencia->bindParam(':VID',$IdEmp);
     $sentencia->bindParam(':VNOMBREEMP',$NombreEmp);
     $sentencia->bindParam(':VAPELLIDOEMP',$ApellidoEmp);
@@ -50,9 +50,6 @@ function EditarEmpleadoModel($IdEmp, $NombreEmp, $ApellidoEmp, $TelefonoEmp, $Ce
     $sentencia->bindParam(':VEMAILEMP',$EmailEmp);
     $sentencia->bindParam(':VPUESTOEMP',$PuestoEmp);
     $sentencia->bindParam(':VSALARIOEMP',$SalarioEmp);
-    $sentencia->bindParam(':IDPROVINCIA',$idProvincia);
-    $sentencia->bindParam(':IDCANTON',$idCanton);
-    $sentencia->bindParam(':IDDISTRITO',$idDistrito);
     $sentencia->execute();
 
     return $sentencia;

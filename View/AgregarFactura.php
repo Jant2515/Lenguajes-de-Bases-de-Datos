@@ -1,6 +1,6 @@
 <?php
 include_once __DIR__ . '/generales.php';
-include_once __DIR__ . '\..\Controller\MascotasController.php';
+include_once __DIR__ . '\..\Controller\FacturasController.php';
 ?>
 
 <!DOCTYPE html>
@@ -31,74 +31,52 @@ include_once __DIR__ . '\..\Controller\MascotasController.php';
         </div>
 
         <!-- AGREGAR CITA NUEVA -->
-        <form>
-            <br><br><br><br><br><br>
-            <div class="col-md-12">
-
-                <div class="row form-group">
-                    <div class="col-md-1 margin-bottom-15">
+        <section class="vh-100 gradient-custom">
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                        <div class="card bg-light text-black" style="border-radius: 1rem;">
+                            <div class="card-body p-5 text-center">
+                                <form action="" method="post" name="login">
+                                    <div class="mb-md-5 mt-md-4 pb-5">
+                                        <h2 class="fw-bold mb-2 text-uppercase">
+                                            <h2 class="fw-bold mb-2 text-uppercase">Agregar Factura</h2>
+                                        </h2>
+                                        <p class="text-black-50 mb-5">Ingrese los datos necesarios</p>
+                                        <div class="form-outline form-white  mb-4">
+                                            <label for="inputPassword4" class="form-label">Veterinaria</label>
+                                            <input type="text" class="form-control" id="Veterinaria"
+                                                name="Veterinaria" value="GUANAVET" readonly>
+                                        </div>
+                                        <div class="form-outline form-white  mb-4">
+                                            <label for="inputEmail4" class="form-label">Telefono</label>
+                                            <input type="text" class="form-control" id="Telefono" name="Telefono"
+                                                value="26669444" readonly></div>
+                                        <div class="form-outline form-white  mb-4">
+                                            <label for="inputPassword4" class="form-label">Nombre Cliente</label>
+                                            <input type="text" class="form-control" id="NomCliente"
+                                                name="NomCliente">
+                                        </div>
+                                        <div class="form-outline form-white  mb-4">
+                                            <label for="inputPassword4" class="form-label">Nombre de la Mascota</label>
+                                            <input type="text" class="form-control" id="NomMascota"
+                                                name="NomMascota">
+                                        </div>
+                                        <div class="form-outline form-white  mb-4">
+                                            <label for="inputPassword4" class="form-label">Subtotal</label>
+                                            <input type="text" class="form-control" id="Subtotal"
+                                                name="Subtotal">
+                                        </div>
+                                        <button type="submit" class="btn btn-outline-info btn-lg px-5"
+                                         id="agregarEmp" name="agregarEmp">Confirmar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="col-md-3 margin-bottom-15">
-                        <label class="control-label">Veterinaria</label>
-                        <input value="Guanavet" type="text" class="form-control" id="txtVeterinaria" name="txtVeterinaria" autocomplete="off" required disabled>
-                    </div>
-
-                    <div class="col-md-4 margin-bottom-15">
-                    <label class="control-label">Telefono</label>
-                        <input value="26669444" type="text" class="form-control" id="txtTelefono" name="txtTelefono" autocomplete="off" required disabled>
-                    </div>
-
-                    <div class="col-md-3 margin-bottom-15">
-                        <label class="control-label">Nombre del Cliente</label>
-                        <input type="text" class="form-control" id="txtNomCliente" name="txtNomCliente" autocomplete="off" required>
-                    </div>
-
-                    <div class="col-md-1 margin-bottom-15">
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="col-md-12">
-
-                <div class="row form-group">
-                    <div class="col-md-2 margin-bottom-15">
-                    </div>
-
-                    <div class="col-md-4 margin-bottom-15">
-                        <label class="control-label">Nombre de la Mascota</label>
-                        <input type="text" class="form-control" id="txtNomMascota" name="txtNomMascota" autocomplete="off" required>
-                        </select>
-                    </div>
-
-                    <div class="col-md-4 margin-bottom-15">
-                        <label class="control-label">Subtotal</label>
-                        <input value="1000" type="number" min="1000" class="form-control" id="txtSubtotal" name="txtSubtotal" autocomplete="off" required>
-                    </div>
-
-                    <div class="col-md-2 margin-bottom-15">
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="col-md-12">
-                <div class="col-md-8 margin-bottom-15">
-                </div>
-                <div class="col-md-3 margin-bottom-15">
-
-                    <input type="submit" value="Guardar" class="btn btn-success" id="btnGuardar" name="btnGuardar" autocomplete="off" required>
-                    <br>
-                    <input type="submit" value="Cancelar" class="btn btn-info" id="btnCancelar" name="btnCancelar" autocomplete="off" required>
-
-                </div>
-                <div class="col-md-1 margin-bottom-15">
                 </div>
             </div>
-        </form>
+        </section>
         <br>
         <?php
         footerOtros();

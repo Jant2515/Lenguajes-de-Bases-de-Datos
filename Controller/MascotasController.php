@@ -2,20 +2,21 @@
 
 include_once __DIR__ . '\..\Model\MascotasModel.php';
 
-function Citalista()
+function Mascotalista()
 {
-  $stmt = ListarCitas();
+  $stmt = ListarMascota();
   while($row = $stmt->fetch(PDO::FETCH_ASSOC))
   {
     echo '<tr>';
-    echo '<td>' . $row["idcita"] . '</td>';
-    echo '<td>' . $row["servicio_cita"] . '</td>';
-    echo '<td>' . $row["fecha_cita"] . '</td>';
-    echo '<td>' . $row["hora_cita"] . '</td>';
-    echo '<td>' . $row["telefono_cita"] . '</td>';
-    echo '<td>' . $row["nombre mascota"] . '</td>';
-    echo '<td><a type="button" href="EditarCita.php?id='. $row['idmascotas']. '" class="btn btn-outline-secondary">Editar</a>';
-    echo '<td><a type="button" class="btn btn-outline-danger">Eliminar</a>';
+    echo '<td>' . $row["idmascota"] . '</td>';
+    echo '<td>' . $row["nombre_masc"] . '</td>';
+    echo '<td>' . $row["edad_masc"] . '</td>';
+    echo '<td>' . $row["genero_masc"] . '</td>';
+    echo '<td>' . $row["esterelizado_masc"] . '</td>';
+    echo '<td>' . $row["pedigree_masc"] . '</td>';
+    echo '<td>' . $row["dueno"] . '</td>';
+    echo '<td><a type="button" href="EditarMascota.php?id='. $row['idmascota']. '" class="btn btn-outline-secondary">Editar</a>';
+    echo '<td><a type="button" href="EliminarMascota.php?id='. $row['idmascota']. '"class="btn btn-outline-danger">Eliminar</a>';
     echo '</tr>';
   }
 }
@@ -38,7 +39,7 @@ if(isset($_POST["agregarMascota"]))
 
 if(isset($_POST["btnConfirmar"]))
 {
-  $IDMas = $_POST["nombre_masc"];
+  $IDMas = $_POST["id_masc"];
   $NomMas = $_POST["nombre_masc"];
   $RazaMas = $_POST["raza"];
   $EdadMas = $_POST["edad"];
@@ -47,10 +48,11 @@ if(isset($_POST["btnConfirmar"]))
   $GeneroMas = $_POST["genero"];
   $EsterilizadoMas = $_POST["esterelizacion"];
   $PedigreeMas = $_POST["pedigree"];
-  $IdCliente = $_POST["idclient"];
 
-  EditarMascotaModel($IDMas, $NomMas, $RazaMas, $EdadMas, $PesoMas, $TallaMas, $GeneroMas, $EsterilizadoMas, $PedigreeMas, $IdCliente);
+  EditarMascotaModel($IDMas, $NomMas, $RazaMas, $EdadMas, $PesoMas, $TallaMas, $GeneroMas, $EsterilizadoMas, $PedigreeMas);
   header("Location: Mascota.php");
 }
+
+
 
 ?>

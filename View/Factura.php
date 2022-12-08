@@ -53,8 +53,6 @@ include_once __DIR__ . '\generales.php';
                                     <th>Nombre de Cliente</th>
                                     <th>Nombre de la Mascota</th>
                                     <th>Subtotal</th>
-                                    <th>Editar Factura</th>
-                                    <th>Eliminar Factura</th>
                                 </tr>
                             </thead>
                             <tbody>

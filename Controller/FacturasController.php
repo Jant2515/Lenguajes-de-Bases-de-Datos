@@ -12,20 +12,17 @@ function FacturaLista()
     echo '<td>' . $row["nombre_cliente_fact"] . '</td>';
     echo '<td>' . $row["nombre_mascota_fact"] . '</td>';
     echo '<td>' . $row["subtotal_fact"] . '</td>';
-    echo '<td><a type="button" href="EditarFactura.php?q='.$row['idfactura'].'" class="btn btn-outline-secondary">Editar</a>';
-    echo '<td><a type="button" class="btn btn-outline-danger">Eliminar</a>';
     echo '</tr>';
   }
 }
-if(isset($_POST["btnGuardar"]))
+if(isset($_POST["agregarEmp"]))
 {
-    $FechaFact = $_POST["nombreServicio"];
-    $NombreVetFact= $_POST["txtVeterinaria"];
-    $TelVetFact = $_POST["txtTelefono"];
-    $NombreCliFact = $_POST["txtNomCliente"];
-    $NombreMascFact= $_POST["txtNomMascota"];
-    $SubtotalFact = $_POST["txtSubtotal"];
-    AgregarFacturaModel($FechaFact, $NombreVetFact, $TelVetFact, $NombreCliFact, $NombreMascFact, $SubtotalFact);
+    $NombreVetFact= $_POST["Veterinaria"];
+    $TelVetFact = $_POST["Telefono"];
+    $NombreCliFact = $_POST["NomCliente"];
+    $NombreMascFact= $_POST["NomMascota"];
+    $SubtotalFact = $_POST["Subtotal"];
+    AgregarFacturaModel($NombreVetFact, $TelVetFact, $NombreCliFact, $NombreMascFact, $SubtotalFact);
     header("Location: Factura.php");
 }
 

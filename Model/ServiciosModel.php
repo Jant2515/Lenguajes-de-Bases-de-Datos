@@ -19,7 +19,7 @@ function AgregarServiciosModel($NombreServicio, $DescripcionServicio, $PrecioSer
     $conex = new Conexion();
 
     $getConection = $conex->Conectar();
-    $sentencia = $getConection->prepare("BEGIN CrearCita(:VNOMSERVICIO ,:VDESCRIPCION, :VPRECIO); END;");
+    $sentencia = $getConection->prepare("BEGIN INSERTAR_SERVICIOS(:VNOMSERVICIO ,:VDESCRIPCION, :VPRECIO); END;");
     $sentencia->bindParam(':VNOMSERVICIO',$NombreServicio);
     $sentencia->bindParam(':VDESCRIPCION',$DescripcionServicio);
     $sentencia->bindParam(':VPRECIO',$PrecioServicio);
@@ -36,13 +36,13 @@ function EditarServiciosModel($IDServicio, $NombreServicio, $DescripcionServicio
 
     $getConection = $conex->Conectar();
 
-    $stmt = $getConection->prepare("BEGIN EDITAR_SERVICIO(:VID, :VNOMSERVICIO ,:VDESCRIPCION, :VPRECIO); END;");
+    $sentencia = $getConection->prepare("BEGIN EDITAR_SERVICIO(:VID, :VNOMSERVICIO ,:VDESCRIPCION, :VPRECIO); END;");
     $sentencia->bindParam(':VID',$IDServicio);
     $sentencia->bindParam(':VNOMSERVICIO',$NombreServicio);
     $sentencia->bindParam(':VDESCRIPCION',$DescripcionServicio);
     $sentencia->bindParam(':VPRECIO',$PrecioServicio);
     $sentencia->execute();
-    $stmt->execute();
+    $sentencia->execute();
 
     return $sentencia;
 }
