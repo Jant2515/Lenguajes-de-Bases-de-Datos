@@ -1,6 +1,32 @@
 <?php
 include_once __DIR__ . '/generales.php';
 include_once __DIR__ . '\..\Controller\EmpleadoController.php';
+
+include_once __DIR__ . '/../Model/ConnBD.php';
+
+$conex = new Conexion(); 
+$getConection= $conex-> Conectar(); 
+ 
+
+$ci=$_GET['q']; 
+$sql="select*from empleados where idempleado=$ci"; 
+$stmt=$getConection-> prepare($sql);
+ $stmt-> execute(); 
+ while($row=$stmt->fetch(PDO::FETCH_ASSOC)){ 
+    $IdEmpleado=$row['idempleado']; 
+   $Cedula=$row['cedulaemp']; 
+   $Nombreemp=$row['nombreemp']; 
+   $Apeemp=$row['apellidoemp']; 
+   $Telefonoemp=$row['telefonoemp']; 
+   $emaliemp=$row['emailemp']; 
+   $Puestoemp=$row['puestoemp']; 
+   $salarioemp=$row['salarioemp']; 
+
+}
+
+//50.24 min
+
+
 ?>
 
 <!DOCTYPE html>
@@ -51,43 +77,43 @@ include_once __DIR__ . '\..\Controller\EmpleadoController.php';
                                             <label for="inputPassword4" class="form-label">Cedula</label>
                                             <input type="text" class="form-control" id="cedula_emp"
                                                 name="cedula_emp"
-                                                value="<?php echo $dato["CedulaEmp"]?>">
+                                                value="<?php echo $Cedula["CedulaEmp"]?>">
                                         </div>
 
                                         <div class="form-outline form-white  mb-4">
                                             <label for="inputEmail4" class="form-label">Nombre</label>
                                             <input type="text" class="form-control" id="nombre_emp" name="nombre_emp"
-                                            value="<?php echo $dato["NombreEmp"]?>">
+                                            value="<?php echo $Nombreemp["NombreEmp"]?>">
                                         </div>
                                         <div class="form-outline form-white  mb-4">
                                             <label for="inputPassword4" class="form-label">Apellido</label>
                                             <input type="text" class="form-control" id="apellido_emp"
                                                 name="apellido_emp"
-                                                value="<?php echo $dato["ApellidoEmp"]?>">
+                                                value="<?php echo $Apeempe["ApellidoEmp"]?>">
                                         </div>
                                         <div class="form-outline form-white  mb-4">
                                             <label for="inputPassword4" class="form-label">Telefono</label>
                                             <input type="text" class="form-control" id="telefono_emp"
                                                 name="telefono_emp"
-                                                value="<?php echo $dato["TelefonoEmp"]?>">
+                                                value="<?php echo $Telefonoemp["TelefonoEmp"]?>">
                                         </div>
                                         <div class="form-outline form-white  mb-4">
                                             <label for="inputPassword4" class="form-label">Email</label>
                                             <input type="text" class="form-control" id="mail_emp"
                                                 name="mail_emp"
-                                                value="<?php echo $dato["EmailEmp"]?>">
+                                                value="<?php echo $emaliemp["EmailEmp"]?>">
                                         </div>
                                         <div class="form-outline form-white  mb-4">
                                             <label for="inputPassword4" class="form-label">Puesto</label>
                                             <input type="text" class="form-control" id="puesto_emp"
                                                 name="puesto_emp"
-                                                value="<?php echo $dato["PuestoEmp"]?>">
+                                                value="<?php echo $Puestoemp["PuestoEmp"]?>">
                                         </div>
                                         <div class="form-outline form-white  mb-4">
                                             <label for="inputPassword4" class="form-label">Salario</label>
                                             <input type="text" class="form-control" id="salario_emp"
                                                 name="salario_emp"
-                                                value="<?php echo $dato["SalarioEmp"]?>">
+                                                value="<?php echo $salarioemp["SalarioEmp"]?>">
                                         </div>
 
                                         <div class="form-outline form-white  mb-4">

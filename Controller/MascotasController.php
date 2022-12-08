@@ -14,7 +14,7 @@ function Citalista()
     echo '<td>' . $row["hora_cita"] . '</td>';
     echo '<td>' . $row["telefono_cita"] . '</td>';
     echo '<td>' . $row["nombre mascota"] . '</td>';
-    echo '<td><a type="button" href="EditarCita.php?id='. $row['idcita']. '" class="btn btn-outline-secondary">Editar</a>';
+    echo '<td><a type="button" href="EditarCita.php?id='. $row['idmascotas']. '" class="btn btn-outline-secondary">Editar</a>';
     echo '<td><a type="button" class="btn btn-outline-danger">Eliminar</a>';
     echo '</tr>';
   }
