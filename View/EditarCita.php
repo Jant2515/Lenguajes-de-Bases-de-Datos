@@ -2,24 +2,32 @@
 include_once __DIR__ . '/generales.php';
 include_once __DIR__ . '\..\Controller\MascotasController.php';
 
-function ConsultaridcitasModel()
-{
-    include_once __DIR__ . '/../Model/ConnBD.php';
-  $conex = new Conexion();
-  $getConection = $conex->Conectar();
-  $stmt=$_GET['IDCITA'];
-  $sql= $getConection->prepare("select*from cita where idcita='$stmt'");
-  $stmt1 = $getConection->prepare($sql); 
-  $stmt1->execute();
+include_once __DIR__ . '/../Model/ConnBD.php';
 
-}
+$conex = new Conexion(); 
+$getConection= $conex-> Conectar(); 
+ 
+
+$ci=$_GET['id']; 
+$sql="select*from cita where idcita=$ci"; 
+$stmt=$getConection-> prepare($sql);
+ $stmt-> execute(); 
+ while($row=$stmt->fetch(PDO::FETCH_ASSOC)){ 
+   $IDCita=$row['idcita']; 
+   $ServicioCita=$row['servicio_cita']; 
+   $FechaCita=$row['fecha_cita']; 
+   $HoraCita=$row['hora_cita']; 
+   $TelCita=$row['telefono_cita']; 
+   $MascotaCita=$row['nombre_mascota_cita']; }
+
+//50.24 min
 ?>
+
 <!DOCTYPE html>
 
 <head>
     <?php
     LinksOtros();
-    ConsultaridcitasModel();
     ?>
 </head>
 

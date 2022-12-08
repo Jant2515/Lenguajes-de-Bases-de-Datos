@@ -35,7 +35,6 @@ include_once __DIR__ . '\generales.php';
         <img src="images/content-bg.jpg" alt="">
     </div>
 
-
     <div class="templatemo-content-wrapper">
         <div class="templatemo-content">
 
