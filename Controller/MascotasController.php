@@ -51,13 +51,14 @@ function Mascotalista()
   while($row = $stmt->fetch(PDO::FETCH_ASSOC))
   {
     echo '<tr>';
+    echo '<td>' . $row["idmascota"] . '</td>';
     echo '<td>' . $row["nombre_masc"] . '</td>';
     echo '<td>' . $row["edad_masc"] . '</td>';
     echo '<td>' . $row["genero_masc"] . '</td>';
     echo '<td>' . $row["esterelizado_masc"] . '</td>';
     echo '<td>' . $row["pedigree_masc"] . '</td>';
     echo '<td>' . $row["dueno"] . '</td>';
-    echo '<td><a type="button" href="EditarCita.php" class="btn btn-outline-secondary">Editar</a>';
+    echo '<td><a type="button" href="EditarMascota.php?q='. $row['idmascota']. '" class="btn btn-outline-secondary">Editar</a>';
     echo '<td><a type="button" class="btn btn-outline-danger">Eliminar</a>';
     echo '</tr>';
   }

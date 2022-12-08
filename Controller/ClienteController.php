@@ -8,12 +8,13 @@ function Clientelista()
   while($row = $stmt->fetch(PDO::FETCH_ASSOC))
   {
     echo '<tr>';
+    echo '<td>' . $row["idcliente"] . '</td>';
     echo '<td>' . $row["cedula"] . '</td>';
     echo '<td>' . $row["nombrecliente"] . '</td>';
     echo '<td>' . $row["apellidocliente"] . '</td>';
     echo '<td>' . $row["telefonocliente"] . '</td>';
     echo '<td>' . $row["emailcliente"] . '</td>';
-    echo '<td><a type="button" href="EditarCliente.php" class="btn btn-outline-secondary">Editar</a>';
+    echo '<td><a type="button" href="EditarCliente.php?q='. $row['idcliente']. '" class="btn btn-outline-secondary">Editar</a>';
     echo '<td><a type="button" class="btn btn-outline-danger">Eliminar</a>';
     echo '</tr>';
   }

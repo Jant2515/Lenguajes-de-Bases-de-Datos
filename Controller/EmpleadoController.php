@@ -8,6 +8,7 @@ function Empleadolista()
   while($row = $stmt->fetch(PDO::FETCH_ASSOC))
   {
     echo '<tr>';
+    echo '<td>' . $row["idempleado"] . '</td>';
     echo '<td>' . $row["cedulaemp"] . '</td>';
     echo '<td>' . $row["nombreemp"] . '</td>';
     echo '<td>' . $row["apellidoemp"] . '</td>';
@@ -15,7 +16,7 @@ function Empleadolista()
     echo '<td>' . $row["emailemp"] . '</td>';
     echo '<td>' . $row["puestoemp"] . '</td>';
     echo '<td>' . $row["salarioemp"] . '</td>';
-    echo '<td><a type="button" href="EditarEmpleado.php?id='. $row['id']. '" class="btn btn-outline-secondary">Editar</a>';
+    echo '<td><a type="button" href="EditarEmpleado.php?q='. $row['idempleado']. '" class="btn btn-outline-secondary">Editar</a>';
     echo '<td><a type="button" class="btn btn-outline-danger">Eliminar</a>';
     echo '</tr>';
   }

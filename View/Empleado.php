@@ -46,6 +46,7 @@ include_once __DIR__ . '\generales.php';
                         <table id="tbDatos" class="table table-bordered table-hover">
                             <thead>
                                 <tr>
+                                    <th>id</th>
                                     <th>Cedula</th>
                                     <th>Nombre</th>
                                     <th>Apellido</th>

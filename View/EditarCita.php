@@ -20,7 +20,6 @@ $stmt=$getConection-> prepare($sql);
    $TelCita=$row['telefono_cita']; 
    $MascotaCita=$row['nombre_mascota_cita']; }
 
-//50.24 min
 ?>
 
 <!DOCTYPE html>
