@@ -49,7 +49,6 @@ function navegadorIndex()
                 <a href="View/contact.php">Contacto</a>
                 <a href="View/MostrarTablas.php">Tablas</a>
                 <a href="View/auditoria.php">Auditoria</a>
-                <a href="View/login.php">Iniciar Sesion</a>
                 
               </div>
             </div>
