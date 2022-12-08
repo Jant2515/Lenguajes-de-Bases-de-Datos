@@ -13,9 +13,10 @@ function Citalista()
     echo '<td>' . $row["fecha_cita"] . '</td>';
     echo '<td>' . $row["hora_cita"] . '</td>';
     echo '<td>' . $row["telefono_cita"] . '</td>';
-    echo '<td>' . $row["nombre mascota"] . '</td>';
+    echo '<td>' . $row["nombre_mascota_cita"] . '</td>';
+    echo '<td>' . $row["idempleado"] . '</td>';
     echo '<td><a type="button" href="EditarCita.php?id='. $row['idcita']. '" class="btn btn-outline-secondary">Editar</a>';
-    echo '<td><a type="button" class="btn btn-outline-danger">Eliminar</a>';
+    echo '<td><a type="button" href="Eliminar.php?id='. $row['idcita']. '"class="btn btn-outline-danger">Eliminar</a>';
     echo '</tr>';
   }
 }
