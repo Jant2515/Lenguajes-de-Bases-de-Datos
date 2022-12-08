@@ -1,6 +1,6 @@
 <?php
 include_once __DIR__ . '/generales.php';
-include_once __DIR__ . '\..\Controller\MascotasController.php';
+include_once __DIR__ . '\..\Controller\DetalleFacturaController.php';
 ?>
 
 <!DOCTYPE html>
@@ -81,8 +81,15 @@ include_once __DIR__ . '\..\Controller\MascotasController.php';
                                             <label for="inputPassword4" class="form-label">IVA</label>
                                             <input type="text" class="form-control" id="IVA" name="IVA">
                                         </div>
-                                        <button type="submit" class="btn btn-outline-info btn-lg px-5" id="agregarDetalle"
-                                            name="agregarDetalle">Confirmar</button>
+                                        <div class="form-outline form-white  mb-4">
+
+                                            <label for="inputPassword4" class="form-label">Total</label>
+
+                                            <input type="text" class="form-control" id="Total" name="Total">
+
+                                        </div>
+                                        <button type="submit" class="btn btn-outline-info btn-lg px-5"
+                                            id="agregarDetalle" name="agregarDetalle">Confirmar</button>
                                     </div>
                                 </form>
                             </div>

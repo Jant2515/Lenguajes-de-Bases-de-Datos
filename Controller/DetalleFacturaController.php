@@ -20,21 +20,21 @@ function DetalleLista()
     echo '</tr>';
   }
 }
-if(isset($_POST["btnGuardar"]))
+if(isset($_POST["agregarDetalle"]))
 {
-  $NumLineaDet = $_POST[""];
-  $FechaDet= $_POST[""];
-  $NombreVetDet = $_POST["txtVeterinaria"];
-  $TelVetDet = $_POST["txtTelefono"];
-  $NombreCliDet = $_POST["txtNomCliente"];
-  $NombreMascDet= $_POST["txtNomMascota"];
-  $DescripcionDet = $_POST["txtDescripcion"];
-  $SubtotalDet = $_POST["txtSubtotal"];
-  $DescuentoDet = $_POST["txtDescuento"]; 
-  $IvaDet = $_POST["txtIva"];
-  $TotalDet = $_POST["txtTotal"];
-    AgregarDetalleModel($NumLineaDet, $FechaDet, $NombreVetDet, $TelVetDet, $NombreCliDet, $NombreMascDet, $DescripcionDet, $SubtotalDet,  $DescuentoDet, $IvaDet, $TotalDet);
-    header("Location: DetalleFactura.php");
+  $NumLineaDet = $_POST["NumLinea"];
+  $NombreVetDet = $_POST["Veterinaria"];
+  $TelVetDet = $_POST["Telefono"];
+  $NombreCliDet = $_POST["NomCliente"];
+  $NombreMascDet= $_POST["NomMascota"];
+  $DescripcionDet = $_POST["Descripcion"];
+  $SubtotalDet = $_POST["Subtotal"];
+  $DescuentoDet = $_POST["Descuento"]; 
+  $IvaDet = $_POST["IVA"];
+  $TotalDet = $_POST["Total"];
+  
+  AgregarDetalleModel($NumLineaDet, $NombreVetDet, $TelVetDet, $NombreCliDet, $NombreMascDet, $DescripcionDet, $SubtotalDet,  $DescuentoDet, $IvaDet, $TotalDet);
+  header("Location: DetalleFactura.php");
 }
 if(isset($_POST["btnEditar"]))
 {
